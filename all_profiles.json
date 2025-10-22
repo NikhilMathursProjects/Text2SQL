@@ -1,0 +1,2177 @@
+{
+    "azure_cost_usage": {
+        "table_name": "azure_cost_usage",
+        "row_count": 5000,
+        "columns": {
+            "billedcost": {
+                "null_count": 0,
+                "distinct_count": 2902,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.0,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695,
+                "short_description": "Represents the actual cost billed for the Azure resource usage.",
+                "long_description": "This column contains the cost in a floating-point number format, reflecting the finalized cost after discounts and adjustments. The value range is from 0.0 to 992.32695, indicating the cost can be zero or a positive value. It's likely in the currency specified by 'billingcurrency'."
+            },
+            "billingaccountid": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 53,
+                "max_length": 53,
+                "common_patterns": {
+                    "alphanumeric": 5000
+                },
+                "short_description": "Unique identifier for the billing account associated with the Azure usage.",
+                "long_description": "This column stores the billing account ID as an object (likely a string). All entries have the same value, indicating all usage is associated with a single billing account. The string is 53 characters long and consists of alphanumeric characters."
+            },
+            "billingaccountname": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 17,
+                "max_length": 17,
+                "common_patterns": {},
+                "short_description": "The name of the billing account associated with the Azure usage.",
+                "long_description": "This column contains the name of the billing account. All entries have the same value, suggesting usage data pertains to a single billing account. The name is a string of 17 characters."
+            },
+            "billingaccounttype": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 15,
+                "max_length": 15,
+                "common_patterns": {},
+                "short_description": "The type of billing account.",
+                "long_description": "This column indicates the type of the billing account. All rows have the same value, the column contains a string of 15 characters, indicating a consistent billing account type for the data set."
+            },
+            "billingcurrency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "The currency in which the costs are billed.",
+                "long_description": "This column specifies the currency used for billing. The column contains only one distinct value and it's a 3-character string, likely representing a standard currency code (e.g., USD, EUR). The value is expected to be consistent across all rows, indicating all costs are in the same currency."
+            },
+            "billingperiodend": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {},
+                "short_description": "The end date of the billing period.",
+                "long_description": "Indicates the end date for the billing cycle. The format is a string of 23 characters. There are three distinct values, suggesting the data spans three different billing cycles. The format is probably a datetime string."
+            },
+            "billingperiodstart": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {},
+                "short_description": "The start date of the billing period.",
+                "long_description": "Specifies the start date of the billing cycle. The format is a string of 23 characters. There are three distinct values, corresponding to the start dates of the billing cycles. The format is probably a datetime string."
+            },
+            "chargecategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 8,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "Categorizes the type of charge.",
+                "long_description": "This column classifies the type of charge, which is likely related to services, products, or discounts. The column contains two distinct string values (e.g., 'Discount', 'Usage') with lengths between 5 and 8 characters. The values are expected to be all letters."
+            },
+            "chargedescription": {
+                "null_count": 0,
+                "distinct_count": 381,
+                "data_type": "object",
+                "sample_values": [
+                    "Azure Monitor - Alerts System Log Monitored at 5 Minute Frequency",
+                    "Virtual Network Private Link - Standard Data Processed - Ingress",
+                    "Bandwidth Inter-Region - Inter Continent Data Transfer Out - OCEANIA To Any - Intercontinental",
+                    "General Block Blob v2 - Hot ZRS - Read Operations - AU East",
+                    "Files v2 - ZRS - Read Operations - AU East",
+                    "Virtual Network Peering - Intra-Region Egress",
+                    "Standard HDD Managed Disks - Snapshots - LRS - Snapshots - AU East",
+                    "Azure Data Factory v2 - Cloud - Data Movement",
+                    "Virtual Machines Dsv5 Series - D8s v5 - AU East",
+                    "Virtual Network Private Link - Standard Private Endpoint"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 109,
+                "common_patterns": {
+                    "alphanumeric": 1760,
+                    "all_letters": 5
+                },
+                "short_description": "Provides a detailed description of the charges incurred.",
+                "long_description": "A textual description of the charge, clarifying what the cost represents (e.g., specific service used, applied discount). The length varies between 7 and 109 characters. The values are primarily alphanumeric but can include other characters."
+            },
+            "chargefrequency": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 1
+                },
+                "short_description": "Defines how often the charge occurs.",
+                "long_description": "Indicates the frequency of the charge, such as 'Monthly' or 'Daily'. The values are strings of 9-11 characters. Almost all entries in the column are identical, suggesting a consistent charge frequency throughout the dataset."
+            },
+            "chargeperiodend": {
+                "null_count": 0,
+                "distinct_count": 92,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-17 00:00:00.000",
+                    "2025-07-22 00:00:00.000",
+                    "2025-07-25 00:00:00.000",
+                    "2025-07-15 00:00:00.000",
+                    "2025-07-27 00:00:00.000",
+                    "2025-07-23 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-07-05 00:00:00.000",
+                    "2025-07-31 00:00:00.000",
+                    "2025-07-11 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {},
+                "short_description": "The end date of the charge period.",
+                "long_description": "This indicates the end date of the specific period for which the charge applies. The format is a string of 23 characters. There are 92 distinct values, suggesting a more granular time frame than billing periods."
+            },
+            "chargeperiodstart": {
+                "null_count": 0,
+                "distinct_count": 92,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-16 00:00:00.000",
+                    "2025-07-21 00:00:00.000",
+                    "2025-07-24 00:00:00.000",
+                    "2025-07-14 00:00:00.000",
+                    "2025-07-26 00:00:00.000",
+                    "2025-07-22 00:00:00.000",
+                    "2025-07-31 00:00:00.000",
+                    "2025-07-04 00:00:00.000",
+                    "2025-07-30 00:00:00.000",
+                    "2025-07-10 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {},
+                "short_description": "The start date of the charge period.",
+                "long_description": "This indicates the start date of the specific period for which the charge applies. The format is a string of 23 characters. There are 92 distinct values, suggesting a more granular time frame than billing periods."
+            },
+            "commitmentdiscountcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Spend",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "Categorizes the type of commitment discount applied.",
+                "long_description": "This column specifies the category of the commitment discount. The column contains three distinct values in string format with lengths between 5 and 7 characters. It could describe different types or tiers of commitment discounts. The values are expected to be all letters."
+            },
+            "commitmentdiscountid": {
+                "null_count": 0,
+                "distinct_count": 8,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "/providers/Microsoft.BillingBenefits/savingsPlanOrders/19ss585n-0rn4-9479-nr93-q3o8r0qn39s6/fnivatfCynaf/62q061qo-06oo-9rs7-367s-o5q6oqn6r9pr",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 141,
+                "common_patterns": {
+                    "all_letters": 4660,
+                    "alphanumeric": 340
+                },
+                "short_description": "Unique identifier for the commitment discount.",
+                "long_description": "This column stores the ID related to the commitment discount. The column contains 8 distinct values. The format is a string, and lengths vary between 7 and 141 characters. The values are primarily all letters.  Some values are alphanumeric."
+            },
+            "commitmentdiscountname": {
+                "null_count": 0,
+                "distinct_count": 8,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Compute_SavingsPlan_01-09-2023_16-00",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 36,
+                "common_patterns": {
+                    "all_letters": 4660,
+                    "alphanumeric": 340
+                },
+                "short_description": "The name of the commitment discount.",
+                "long_description": "Provides the name of the commitment discount. The column contains 8 distinct values in string format. Lengths range from 7 to 36 characters. The values are primarily all letters but some are alphanumeric."
+            },
+            "commitmentdiscountstatus": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Used",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "The status of the commitment discount.",
+                "long_description": "Indicates the status of the commitment discount, such as 'Active', 'Inactive', or 'Pending'. The values are strings of 4-7 characters. The values are expected to be all letters."
+            },
+            "commitmentdiscounttype": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Savings Plan",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 4670
+                },
+                "short_description": "The type of commitment discount.",
+                "long_description": "Describes the type of commitment discount, like 'Savings Plan'. The column contains three distinct string values and the lengths range from 7 to 12 characters. The values are expected to be all letters."
+            },
+            "consumedquantity": {
+                "null_count": 0,
+                "distinct_count": 2610,
+                "data_type": "float64",
+                "sample_values": [
+                    0.03125,
+                    0.010916251689196,
+                    4.007481039e-06,
+                    6.000000000000001,
+                    128.0,
+                    0.002129014581442,
+                    0.331824,
+                    0.066666666666667,
+                    0.66668,
+                    24.0
+                ],
+                "min_value": 0.0,
+                "max_value": 10751877.999999996,
+                "short_description": "The quantity of the resource consumed.",
+                "long_description": "The amount of a resource used, in a numerical format. The values are floating-point numbers. The column has a value range from 0.0 to a very high number, indicating a wide range of consumption values."
+            },
+            "consumedunit": {
+                "null_count": 0,
+                "distinct_count": 13,
+                "data_type": "object",
+                "sample_values": [
+                    "Units/Month",
+                    "GB",
+                    "GB",
+                    "Units",
+                    "Units",
+                    "GB",
+                    "GB/Month",
+                    "Hours",
+                    "Hours",
+                    "Hours"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 3657
+                },
+                "short_description": "The unit of measurement for the consumed quantity.",
+                "long_description": "The unit of measurement associated with the 'consumedquantity' (e.g., GB, hours, units). The column contains 13 distinct string values, and lengths are between 2 and 11 characters. The values are mostly all letters. "
+            },
+            "contractedcost": {
+                "null_count": 0,
+                "distinct_count": 3144,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.409136982576,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695,
+                "short_description": "The contracted cost.",
+                "long_description": "The contracted cost, likely a cost derived from a contract or a commitment. The values are floating-point numbers. The value range is from 0.0 to 992.32695."
+            },
+            "contractedunitprice": {
+                "null_count": 0,
+                "distinct_count": 259,
+                "data_type": "float64",
+                "sample_values": [
+                    1.91754,
+                    0.0127635,
+                    0.10227885,
+                    0.00561795,
+                    0.00191754,
+                    0.012864,
+                    0.07035,
+                    0.31959,
+                    0.6136932,
+                    0.0127635
+                ],
+                "min_value": 0.0,
+                "max_value": 3985.3476,
+                "short_description": "The unit price according to a contract.",
+                "long_description": "The unit price as defined by a contract or commitment. The values are floating-point numbers. There are 259 distinct values, and the value range goes from 0.0 to 3985.3476."
+            },
+            "effectivecost": {
+                "null_count": 0,
+                "distinct_count": 3141,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.24810596202,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695,
+                "short_description": "The effective cost after any discounts or adjustments.",
+                "long_description": "The cost of the resource usage after applying any commitment discounts or other reductions. The values are floating-point numbers.  The range is from 0.0 to 992.32695."
+            },
+            "invoiceissuername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "The name of the invoice issuer.",
+                "long_description": "The name of the entity that issued the invoice. All rows contain the same value, indicating all charges are from the same issuer. The value is a string of 9 characters and are all letters."
+            },
+            "listcost": {
+                "null_count": 0,
+                "distinct_count": 3133,
+                "data_type": "float64",
+                "sample_values": [
+                    0.07015625,
+                    0.000163197962753,
+                    4.79815705e-07,
+                    3.948e-06,
+                    2.8736e-05,
+                    3.1935218722e-05,
+                    0.0273091152,
+                    0.024933333333333,
+                    0.478942912,
+                    0.3588
+                ],
+                "min_value": 0.0,
+                "max_value": 1161.63,
+                "short_description": "The list price before any discounts are applied.",
+                "long_description": "Represents the standard or list price of the resource usage, before discounts or commitments. The values are floating-point numbers. The value range is from 0.0 to 1161.63."
+            },
+            "listunitprice": {
+                "null_count": 0,
+                "distinct_count": 249,
+                "data_type": "float64",
+                "sample_values": [
+                    2.245,
+                    0.01495,
+                    0.11973,
+                    0.00658,
+                    0.002245,
+                    0.015,
+                    0.0823,
+                    0.374,
+                    0.7184,
+                    0.01495
+                ],
+                "min_value": 0.0,
+                "max_value": 4664.88,
+                "short_description": "The unit price of the resource, before discounts.",
+                "long_description": "The standard unit price of the resource before any discounts. The values are floating-point numbers. The range is from 0.0 to 4664.88."
+            },
+            "pricingcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Committed",
+                    "Standard"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "Categorizes the pricing model.",
+                "long_description": "Classifies the pricing model used for the resource, such as 'PayAsYouGo', or 'ReservedInstances'. The column contains three distinct string values that are all letters. The lengths range from 7 to 9 characters."
+            },
+            "pricingquantity": {
+                "null_count": 0,
+                "distinct_count": 2481,
+                "data_type": "float64",
+                "sample_values": [
+                    0.03125,
+                    0.010916251689196,
+                    4.007481039e-06,
+                    0.0006,
+                    0.0128,
+                    0.002129014581442,
+                    0.331824,
+                    0.066666666666667,
+                    0.66668,
+                    24.0
+                ],
+                "min_value": 0.0,
+                "max_value": 64602.0,
+                "short_description": "The quantity used for pricing calculations.",
+                "long_description": "The quantity used to determine the cost based on the pricing model. The values are floating-point numbers. The value range is from 0.0 to 64602.0."
+            },
+            "pricingunit": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "Units/Month",
+                    "GB",
+                    "GB",
+                    "Units",
+                    "Units",
+                    "GB",
+                    "GB/Month",
+                    "Hours",
+                    "Hours",
+                    "Hours"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 3657
+                },
+                "short_description": "The unit used for pricing, such as 'GB' or 'hour'.",
+                "long_description": "The unit of measurement used in the pricing calculations. The column contains 12 distinct string values. The lengths vary from 2 to 11 characters. The values are mostly all letters."
+            },
+            "providername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "The provider of the resource.",
+                "long_description": "The cloud provider, which in this case is likely 'Azure'. All entries have the same value. The value is a string of 9 characters and are all letters."
+            },
+            "publishername": {
+                "null_count": 0,
+                "distinct_count": 4,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 35,
+                "common_patterns": {
+                    "all_letters": 4996
+                },
+                "short_description": "The publisher of the resource.",
+                "long_description": "Identifies the publisher associated with the resource, especially relevant for marketplace resources. The column contains 4 distinct string values. Lengths range from 7 to 35 characters. The values are predominantly all letters."
+            },
+            "regionid": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "australiasoutheast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 18,
+                "common_patterns": {
+                    "all_letters": 4996,
+                    "alphanumeric": 4
+                },
+                "short_description": "The unique identifier for the Azure region.",
+                "long_description": "The ID of the Azure region where the resource is deployed. The column contains 12 distinct values. The format is a string and lengths range from 6 to 18 characters. The values are primarily all letters.  Some values are alphanumeric."
+            },
+            "regionname": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "Australia Southeast",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 19,
+                "common_patterns": {
+                    "all_letters": 257,
+                    "alphanumeric": 4
+                },
+                "short_description": "The name of the Azure region.",
+                "long_description": "The name of the Azure region where the resource is deployed (e.g., 'East US'). The column contains 12 distinct values. The format is a string and the lengths range from 6 to 19 characters. The values are mostly all letters but also some alphanumeric characters."
+            },
+            "resourceid": {
+                "null_count": 0,
+                "distinct_count": 3873,
+                "data_type": "object",
+                "sample_values": [
+                    "/subscriptions/624525qr-o262-97or-or9p-51n2s2qq46pp/resourcegroups/qkp-znvag-et/providers/microsoft.insights/scheduledqueryrules/qkp-znwbe-gbzpng-yvahk cebprff qbja",
+                    "/subscriptions/n38063sp-q7q6-9614-non5-s015p29qr98n/resourcegroups/qngnoevpxf-et-gquctf-acq-nccf-mbar-et/providers/microsoft.compute/virtualmachines/n05qro2rqn1699n7420433ssn1pqor77",
+                    "/subscriptions/p8p21058-os5s-992n-o806-8onqs69155r1/resourcegroups/znantrq-qfv-fcq-bqe-nqf-etc-556-qngnoevpxf/providers/microsoft.compute/virtualmachines/o334o18s3qs7998qnrn15p96q7s80629",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3/resourcegroups/znantrq-et-fre-qngn-pngnybt-abacebq/providers/microsoft.storage/storageaccounts/fpnanhfgenyvnrnfgithjbgt",
+                    "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292/resourcegroups/qfv-ffg-bqe-vbg-etc-556/providers/microsoft.storage/storageaccounts/fgffgvbgbhgchg556",
+                    "/subscriptions/0q33745o-549o-9p71-n3s7-7ns3q8rop551/resourcegroups/gqucef-acg-jro-mbar-et/providers/microsoft.compute/virtualmachines/efacgveriz57",
+                    "/subscriptions/n047s74n-39p1-91q2-o50s-0o399o1369q2/resourcegroups/et-vzntrf/providers/microsoft.compute/snapshots/freire7567e7-7576-58-64-nhfgenyvnrnfg-fanc",
+                    "/subscriptions/5q8nsqss-p8o5-935r-o8q2-1p1prnr9r75s/resourcegroups/et-flq-ceq-pne-qngn-znantrzrag/providers/microsoft.datafactory/factories/ebnqfnsrglnanylgvpf-qs-ceq",
+                    "/subscriptions/p9onon8p-9sp8-97pq-39s8-nq76998892n8/resourcegroups/et-niq-qrq-gsafj-ceq-56/providers/microsoft.compute/virtualmachines/fu-qrqcgsa-107",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3/resourcegroups/npgvirgenafcbeg-et-qri-557/providers/microsoft.network/privateendpoints/npgvirgenafqanqygfg56-crc"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 220,
+                "common_patterns": {
+                    "alphanumeric": 4999,
+                    "all_letters": 1
+                },
+                "short_description": "The unique identifier for the Azure resource.",
+                "long_description": "The full resource ID of the Azure resource (e.g., a virtual machine). The format is a string, and lengths vary greatly from 7 to 220 characters. It is primarily alphanumeric, uniquely identifying the resource.  One entry has all letters."
+            },
+            "resourcename": {
+                "null_count": 0,
+                "distinct_count": 3956,
+                "data_type": "object",
+                "sample_values": [
+                    "QKP-Znwbe-Gbzpng-Yvahk Cebprff Qbja",
+                    "n05qro2rqn1699n7420433ssn1pqor77",
+                    "o334o18s3qs7998qnrn15p96q7s80629",
+                    "fpnanhfgenyvnrnfgithjbgt",
+                    "fgffgvbgbhgchg556",
+                    "efacgveriz57",
+                    "Freire7567E7-7576-58-64-nhfgenyvnrnfg-fanc",
+                    "EBNQFNSRGLNANYLGVPF-QS-CEQ/57-QEVIRF-51-PHFGBZRE-615-GY-Y-F-R-BETNAVFNGVBA_HAVG",
+                    "FU-QRQCGSA-107",
+                    "npgvirgenafqanqygfg56-crc"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 88,
+                "common_patterns": {
+                    "alphanumeric": 3758,
+                    "all_letters": 739
+                },
+                "short_description": "The name of the Azure resource.",
+                "long_description": "The name of the Azure resource (e.g., a virtual machine's name). The format is a string. The lengths vary from 3 to 88 characters. The values are primarily alphanumeric but can include other characters or all letters."
+            },
+            "resourcetype": {
+                "null_count": 0,
+                "distinct_count": 74,
+                "data_type": "object",
+                "sample_values": [
+                    "Log search alert rule",
+                    "Virtual machine",
+                    "Virtual machine",
+                    "Storage account",
+                    "Storage account",
+                    "Virtual machine",
+                    "Snapshot",
+                    "Data Factory pipeline",
+                    "Virtual machine",
+                    "Private endpoint"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 70,
+                "common_patterns": {
+                    "all_letters": 567,
+                    "alphanumeric": 45
+                },
+                "short_description": "The type of Azure resource (e.g., virtual machine, storage account).",
+                "long_description": "This column specifies the type of Azure resource (e.g., virtual machine, storage account). The format is a string. Lengths vary greatly from 4 to 70 characters. The values are primarily all letters and some alphanumeric characters."
+            },
+            "servicecategory": {
+                "null_count": 0,
+                "distinct_count": 13,
+                "data_type": "object",
+                "sample_values": [
+                    "Management and Governance",
+                    "Compute",
+                    "Compute",
+                    "Storage",
+                    "Storage",
+                    "Compute",
+                    "Compute",
+                    "Other",
+                    "Compute",
+                    "Networking"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 4608
+                },
+                "short_description": "Categorizes the Azure service (e.g., Compute, Storage).",
+                "long_description": "Classifies the Azure service that the resource belongs to (e.g., Compute, Storage, Networking). The column contains 13 distinct string values, and the lengths range from 3 to 25 characters. The values are expected to be all letters."
+            },
+            "servicename": {
+                "null_count": 0,
+                "distinct_count": 48,
+                "data_type": "object",
+                "sample_values": [
+                    "Azure Monitor",
+                    "Virtual Machines",
+                    "Virtual Machines",
+                    "Storage Accounts",
+                    "Storage Accounts",
+                    "Virtual Machines",
+                    "Virtual Machines",
+                    "Azure Data Factory v2",
+                    "Virtual Machines",
+                    "Azure Private Link"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 30,
+                "common_patterns": {
+                    "alphanumeric": 23,
+                    "all_letters": 17
+                },
+                "short_description": "The name of the Azure service.",
+                "long_description": "The specific name of the Azure service used (e.g., Virtual Machines, Azure Storage). The column contains 48 distinct string values. The lengths vary from 5 to 30 characters. The values are primarily alphanumeric, but some values are all letters."
+            },
+            "skuid": {
+                "null_count": 0,
+                "distinct_count": 380,
+                "data_type": "float64",
+                "sample_values": [
+                    1077087.0,
+                    611233439.0,
+                    616167951.0,
+                    1083328.0,
+                    1083429.0,
+                    1017022.0,
+                    1019518.0,
+                    1077829.0,
+                    616357551.0,
+                    611235125.0
+                ],
+                "min_value": 0.0,
+                "max_value": 616988881.0,
+                "short_description": "The SKU (Stock Keeping Unit) identifier.",
+                "long_description": "The SKU identifier is a numerical code representing a specific product or service offering. The column contains 380 distinct values. The value range spans from 0.0 to 616988881.0, and the values are numeric (float)."
+            },
+            "skupriceid": {
+                "null_count": 0,
+                "distinct_count": 380,
+                "data_type": "int64",
+                "sample_values": [
+                    1077087,
+                    611233439,
+                    616167951,
+                    1083328,
+                    1083429,
+                    1017022,
+                    1019518,
+                    1077829,
+                    616357551,
+                    611235125
+                ],
+                "min_value": -2.0,
+                "max_value": 616988881.0,
+                "short_description": "The price ID associated with the SKU.",
+                "long_description": "An identifier associated with the pricing of the SKU. The column contains 380 distinct values, and the value range goes from -2.0 to 616988881.0. The values are integer.  This is a numerical code which determines pricing."
+            },
+            "subaccountid": {
+                "null_count": 0,
+                "distinct_count": 151,
+                "data_type": "object",
+                "sample_values": [
+                    "/subscriptions/624525qr-o262-97or-or9p-51n2s2qq46pp",
+                    "/subscriptions/n38063sp-q7q6-9614-non5-s015p29qr98n",
+                    "/subscriptions/p8p21058-os5s-992n-o806-8onqs69155r1",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3",
+                    "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292",
+                    "/subscriptions/0q33745o-549o-9p71-n3s7-7ns3q8rop551",
+                    "/subscriptions/n047s74n-39p1-91q2-o50s-0o399o1369q2",
+                    "/subscriptions/5q8nsqss-p8o5-935r-o8q2-1p1prnr9r75s",
+                    "/subscriptions/p9onon8p-9sp8-97pq-39s8-nq76998892n8",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 51,
+                "common_patterns": {
+                    "alphanumeric": 4998,
+                    "all_letters": 2
+                },
+                "short_description": "The identifier for the sub-account.",
+                "long_description": "The ID of the sub-account associated with the resource usage. The column contains 151 distinct values. The format is a string, and lengths vary from 7 to 51 characters. The values are primarily alphanumeric, but some are all letters."
+            },
+            "subaccountname": {
+                "null_count": 0,
+                "distinct_count": 151,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-zuf-nmherqkpztg-abacebq",
+                    "gsafj-rqnf-qngnuhotf-abacebq",
+                    "gsafj-qfv-bqer-cebq",
+                    "gsafj-rqnf-nanylgvpf-abacebq",
+                    "gsafj-qfv-bqer-abacebq",
+                    "gsafj-rqnf-qngnuhoef-abacebq",
+                    "gsafj-uf-nmherztzg-cebq",
+                    "gsafj-rqnf-nanylgvpf-cebq",
+                    "gsafj-rhf-niq-cebq",
+                    "gsafj-rqnf-nanylgvpf-abacebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 43,
+                "common_patterns": {
+                    "alphanumeric": 260,
+                    "all_letters": 2
+                },
+                "short_description": "The name of the sub-account.",
+                "long_description": "The name assigned to the sub-account for organization. The column contains 151 distinct values. The format is a string, and lengths range from 7 to 43 characters. The values are primarily alphanumeric, but some are all letters."
+            },
+            "subaccounttype": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 5000
+                },
+                "short_description": "The type of sub-account.",
+                "long_description": "The category of the sub-account.  The column contains two distinct string values, which are all letters. The lengths range from 7 to 12 characters."
+            },
+            "tags": {
+                "null_count": 0,
+                "distinct_count": 583,
+                "data_type": "object",
+                "sample_values": [
+                    "{}",
+                    "{\n  \"application\": \"gquctfacqnqo56\",\n  \"cost_center\": \"6555674521\"\n}",
+                    "{\n  \"application\": \"gsafj-qfv-bqer-abacebq\",\n  \"environment\": \"Production\"\n}",
+                    "{\n  \"application\": \"\"\n}",
+                    "{\n  \"application\": \"gsafj-qfv-bqer-abacebq\",\n  \"cost_center\": \"\",\n  \"environment\": \"SIT\"\n}",
+                    "{\n  \"application\": \"efacgveriz57\"\n}",
+                    "{\n  \"application\": \"gsafj-uf-nmherztzg-cebq\",\n  \"cost_center\": \"5555679310\"\n}",
+                    "{\n  \"application\": \"596763\",\n  \"cost_center\": \"6555604585\",\n  \"environment\": \"Prod\"\n}",
+                    "{\n  \"application\": \"Nmher Iveghny Qrfxgbc (NIQ)\",\n  \"cost_center\": \"\",\n  \"environment\": \"Prod\"\n}",
+                    "{\n  \"application\": \"qrsnhyg\",\n  \"cost_center\": \"5555637666\",\n  \"environment\": \"Dev\"\n}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 114,
+                "common_patterns": {
+                    "alphanumeric": 2070,
+                    "all_letters": 98
+                },
+                "short_description": "Tags associated with the resource.",
+                "long_description": "Key-value pairs associated with the resource for filtering and reporting. The column contains 583 distinct values. The format is a string, and the lengths vary between 2 and 114 characters. The values are primarily alphanumeric but can include other characters. Some entries consist of all letters."
+            }
+        },
+        "llm_summaries_generated": true
+    },
+    "aws_cost_usage": {
+        "table_name": "aws_cost_usage",
+        "row_count": 1000,
+        "columns": {
+            "availabilityzone": {
+                "null_count": 0,
+                "distinct_count": 5,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "ap-southeast-2",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 15,
+                "common_patterns": {
+                    "all_letters": 971,
+                    "alphanumeric": 29
+                },
+                "short_description": "Indicates the AWS Availability Zone where the resource was used.",
+                "long_description": "Stores the Availability Zone, which is a discrete location within an AWS Region. Values are strings, with lengths between 7 and 15 characters, often consisting of letters and numbers (e.g., 'us-east-1a').  The majority of values match the 'all_letters' pattern, with a smaller proportion being 'alphanumeric'. This information is critical for understanding the geographical distribution of costs."
+            },
+            "billedcost": {
+                "null_count": 0,
+                "distinct_count": 412,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13,
+                "short_description": "The cost billed for a specific service usage.",
+                "long_description": "Represents the monetary cost associated with the usage, formatted as a float64. The values range from 0.0 to 9.13, and there are 412 distinct values. This field is a core metric for cost analysis, reflecting the actual amount charged to the account."
+            },
+            "billingaccountid": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "float64",
+                "sample_values": [
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0
+                ],
+                "min_value": 428183000000.0,
+                "max_value": 428183000000.0,
+                "short_description": "The unique identifier for the billing account.",
+                "long_description": "This column contains the AWS billing account ID. It is a float64, with a single distinct value (428183000000.0) across all rows. The field identifies the specific account associated with the cost data."
+            },
+            "billingaccountname": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 25,
+                "max_length": 25,
+                "common_patterns": {
+                    "alphanumeric": 1000
+                },
+                "short_description": "The name of the billing account.",
+                "long_description": "Provides the name assigned to the billing account. The values are strings with a length of 25 characters and one distinct value across all rows. All values match the 'alphanumeric' pattern, representing the billing account name."
+            },
+            "billingcurrency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "The currency used for billing.",
+                "long_description": "Specifies the currency in which the costs are billed, such as USD or EUR. It is represented as a 3-character string, with a single distinct value and lengths of 3, with all values matching the 'all_letters' pattern."
+            },
+            "billingperiodend": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {},
+                "short_description": "The end date of the billing period.",
+                "long_description": "Indicates the end date of the billing cycle, in a specific format. It is a string with a length of 7 characters and a single distinct value within the dataset."
+            },
+            "billingperiodstart": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {},
+                "short_description": "The start date of the billing period.",
+                "long_description": "Indicates the start date of the billing cycle, in a specific format. It is a string with a length of 7 characters and a single distinct value within the dataset."
+            },
+            "chargecategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 5,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "Categorizes the charge type.",
+                "long_description": "This column categorizes the type of charge, e.g., 'usage' or 'discount'.  Values are strings with lengths between 3 and 5 characters. All values conform to the 'all_letters' pattern."
+            },
+            "chargedescription": {
+                "null_count": 0,
+                "distinct_count": 169,
+                "data_type": "object",
+                "sample_values": [
+                    "$0.048 per provisioned MiBps-month of gp3 - Asia Pacific (Sydney)",
+                    "$0.098 per GB - Asia Pacific (Sydney) data transfer to US East (Northern Virginia)",
+                    "$0.055 per GB-Month of ONTAP backup storage - Asia Pacific (Sydney)",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.006 per provisioned IOPS-month of gp3 - Asia Pacific (Sydney)",
+                    "$0.020 per GB - All data transfer out to Origin (Europe)",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.000025 per state transition",
+                    "$0.010 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 16,
+                "max_length": 101,
+                "common_patterns": {
+                    "alphanumeric": 980
+                },
+                "short_description": "Provides a detailed description of the charges.",
+                "long_description": "Offers a detailed explanation of the charges incurred, such as service names and specific usage details. It contains strings with lengths between 16 and 101 characters and many distinct values (169). The majority of entries follow the 'alphanumeric' pattern."
+            },
+            "chargefrequency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 11,
+                "max_length": 11,
+                "common_patterns": {},
+                "short_description": "Describes how frequently the charge occurs.",
+                "long_description": "Specifies how often the charge is incurred. It has a single distinct value, with a length of 11 characters."
+            },
+            "chargeperiodend": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {},
+                "short_description": "The end date for the charge period.",
+                "long_description": "Indicates the end date of the charge period, formatted as a string with a length of 7 characters. It contains a single distinct value within the dataset."
+            },
+            "chargeperiodstart": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {},
+                "short_description": "The start date for the charge period.",
+                "long_description": "Indicates the start date of the charge period, formatted as a string with a length of 7 characters. It contains a single distinct value within the dataset."
+            },
+            "commitmentdiscountcategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "Categorizes the type of commitment discount.",
+                "long_description": "Categorizes the commitment discount applied, such as 'reserved' or 'savings plans'. Values are strings with lengths between 5 and 7 characters, and all values matching the 'all_letters' pattern."
+            },
+            "commitmentdiscountid": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 83,
+                "common_patterns": {
+                    "all_letters": 976,
+                    "alphanumeric": 24
+                },
+                "short_description": "Unique identifier for the commitment discount.",
+                "long_description": "Provides a unique ID for the commitment discount. The column contains strings with lengths between 7 and 83 characters. The majority match 'all_letters' pattern, with some matching 'alphanumeric'."
+            },
+            "commitmentdiscountstatus": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "Indicates the status of the commitment discount.",
+                "long_description": "Describes the status of the commitment discount, for example, 'active' or 'pending'. It is a string with lengths between 4 and 7 characters, all values following the 'all_letters' pattern."
+            },
+            "commitmentdiscounttype": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 976
+                },
+                "short_description": "The type of commitment discount applied.",
+                "long_description": "Specifies the type of commitment discount. Values are strings with lengths between 7 and 12 characters. Mostly matching 'all_letters' pattern."
+            },
+            "consumedquantity": {
+                "null_count": 0,
+                "distinct_count": 463,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.852e-07,
+                    1.702e-07,
+                    2.0,
+                    1.0,
+                    0.0,
+                    5.4296e-06,
+                    1.0,
+                    1.0,
+                    0.066896012
+                ],
+                "min_value": 0.0,
+                "max_value": 299392.0,
+                "short_description": "The quantity of a resource consumed.",
+                "long_description": "Represents the amount of a specific resource consumed, such as GB of storage or hours of compute time. It is a float64 with a value range from 0.0 to 299392.0 and has 463 distinct values."
+            },
+            "consumedunit": {
+                "null_count": 0,
+                "distinct_count": 33,
+                "data_type": "object",
+                "sample_values": [
+                    "GiB/Second-Months",
+                    "GB",
+                    "GB-Months",
+                    "Requests",
+                    "Requests",
+                    "IOPS-Months",
+                    "GB",
+                    "Requests",
+                    "StateTransitions",
+                    "GB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 24,
+                "common_patterns": {
+                    "all_letters": 597,
+                    "alphanumeric": 3
+                },
+                "short_description": "The unit of measurement for the consumed quantity.",
+                "long_description": "Specifies the unit in which the consumed quantity is measured, such as 'GB', 'Hrs', or 'Requests'. Values are strings with lengths between 2 and 24 characters. Most values are 'all_letters', with a few 'alphanumeric'."
+            },
+            "contractedcost": {
+                "null_count": 0,
+                "distinct_count": 433,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13,
+                "short_description": "The cost of the service under a contract.",
+                "long_description": "Indicates the cost of the service under a specific contract or commitment. It's a float64 with values ranging from 0.0 to 9.13 and has 433 distinct values."
+            },
+            "contractedunitprice": {
+                "null_count": 0,
+                "distinct_count": 263,
+                "data_type": "float64",
+                "sample_values": [
+                    38.33856,
+                    0.076463314,
+                    0.042890717,
+                    3.432e-07,
+                    3.432e-07,
+                    0.00468,
+                    0.020001473,
+                    3.432e-07,
+                    1.95e-05,
+                    0.0078
+                ],
+                "min_value": 0.0,
+                "max_value": 38.33856468,
+                "short_description": "The price per unit under the contract.",
+                "long_description": "Represents the price per unit as defined by the contract. It's a float64 with values ranging from 0.0 to 38.33856468 and has 263 distinct values."
+            },
+            "effectivecost": {
+                "null_count": 0,
+                "distinct_count": 435,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13,
+                "short_description": "The effective cost after applying discounts and credits.",
+                "long_description": "Represents the final cost after considering all discounts and credits. It's a float64 with values ranging from 0.0 to 9.13 and has 435 distinct values."
+            },
+            "invoiceissuername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 37,
+                "max_length": 37,
+                "common_patterns": {},
+                "short_description": "The name of the invoice issuer.",
+                "long_description": "This column contains the name of the invoice issuer. It's a string of 37 characters with a single distinct value."
+            },
+            "listcost": {
+                "null_count": 0,
+                "distinct_count": 427,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.75e-08,
+                    9.4e-09,
+                    8.8e-07,
+                    4.4e-07,
+                    0.0,
+                    1.086e-07,
+                    4.4e-07,
+                    2.5e-05,
+                    0.00066896
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13,
+                "short_description": "The list cost before discounts.",
+                "long_description": "Represents the standard cost before any discounts or savings plans are applied. It's a float64 with values ranging from 0.0 to 9.13 and has 427 distinct values."
+            },
+            "listunitprice": {
+                "null_count": 0,
+                "distinct_count": 85,
+                "data_type": "float64",
+                "sample_values": [
+                    49.152,
+                    0.098,
+                    0.055,
+                    4.4e-07,
+                    4.4e-07,
+                    0.006,
+                    0.02,
+                    4.4e-07,
+                    2.5e-05,
+                    0.01
+                ],
+                "min_value": 0.0,
+                "max_value": 49.152,
+                "short_description": "The list price per unit before discounts.",
+                "long_description": "The price per unit before discounts are applied. It's a float64 with values ranging from 0.0 to 49.152 and has 85 distinct values."
+            },
+            "pricingcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "Categorizes the pricing model.",
+                "long_description": "Categorizes the pricing model associated with the charge, such as 'OnDemand' or 'Reserved'. Values are strings with lengths between 7 and 9 characters, and all entries match 'all_letters'."
+            },
+            "pricingquantity": {
+                "null_count": 0,
+                "distinct_count": 463,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.852e-07,
+                    1.702e-07,
+                    2.0,
+                    1.0,
+                    0.0,
+                    5.4296e-06,
+                    1.0,
+                    1.0,
+                    0.066896012
+                ],
+                "min_value": 0.0,
+                "max_value": 299392.0,
+                "short_description": "The quantity used for pricing calculations.",
+                "long_description": "Represents the quantity used for the pricing calculation. It's a float64 with a value range from 0.0 to 299392.0 and has 463 distinct values. It likely mirrors `consumedquantity` in many cases."
+            },
+            "pricingunit": {
+                "null_count": 0,
+                "distinct_count": 33,
+                "data_type": "object",
+                "sample_values": [
+                    "GiB/Second-Months",
+                    "GB",
+                    "GB-Months",
+                    "Requests",
+                    "Requests",
+                    "IOPS-Months",
+                    "GB",
+                    "Requests",
+                    "StateTransitions",
+                    "GB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 24,
+                "common_patterns": {
+                    "all_letters": 597,
+                    "alphanumeric": 3
+                },
+                "short_description": "The unit used for pricing.",
+                "long_description": "Specifies the unit used for pricing calculations, corresponding to `pricingquantity`. Values are strings with lengths between 2 and 24 characters. Most values are 'all_letters', with a few 'alphanumeric'."
+            },
+            "providername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "The name of the service provider.",
+                "long_description": "Indicates the service provider (AWS). It's a 3-character string, with a single distinct value, and all values follow the 'all_letters' pattern."
+            },
+            "publishername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 37,
+                "max_length": 37,
+                "common_patterns": {},
+                "short_description": "The name of the publisher associated with the service.",
+                "long_description": "Indicates the publisher. It is a string with a length of 37 characters and one distinct value."
+            },
+            "regionid": {
+                "null_count": 0,
+                "distinct_count": 19,
+                "data_type": "object",
+                "sample_values": [
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "eu-west-1",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 14,
+                "common_patterns": {
+                    "alphanumeric": 986,
+                    "all_letters": 14
+                },
+                "short_description": "The AWS Region ID.",
+                "long_description": "Identifies the AWS Region where the resource was used, e.g., 'us-east-1'. Values are strings with lengths between 6 and 14 characters, predominantly 'alphanumeric', though a few use the 'all_letters' pattern."
+            },
+            "regionname": {
+                "null_count": 0,
+                "distinct_count": 26,
+                "data_type": "object",
+                "sample_values": [
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Europe",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 57
+                },
+                "short_description": "The name of the AWS Region.",
+                "long_description": "Provides the descriptive name of the AWS Region. Values are strings with lengths between 3 and 25 characters. The 'all_letters' pattern appears a few times."
+            },
+            "resourceid": {
+                "null_count": 0,
+                "distinct_count": 717,
+                "data_type": "object",
+                "sample_values": [
+                    "iby-57n9r636p89777o84",
+                    "cgvcf-ohvyq-ffvf-onpxhcf-qnvyl",
+                    "arn:aws:fsx:ap-southeast-2:869402194052",
+                    "ertbs",
+                    "neptvf-pbasvt-fgber-neptvfqriubfg",
+                    "iby-5pqq3813s4915o352",
+                    "arn:aws:cloudfront::646924912074",
+                    "fyf-gznc-cg-genirycnggreaf-eng-qngnohpxrg-75dty2iv9svb",
+                    "arn:aws:states:ap-southeast-2:234622589025",
+                    "arn:aws:ec2:ap-southeast-2:234622589025"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 63,
+                "common_patterns": {
+                    "alphanumeric": 851,
+                    "all_letters": 72
+                },
+                "short_description": "The unique identifier for the AWS resource.",
+                "long_description": "Stores the unique identifier for the specific AWS resource that incurred the cost (e.g., an EC2 instance ID). Values are strings with lengths from 5 to 63 characters.  The majority match the 'alphanumeric' pattern."
+            },
+            "resourcetype": {
+                "null_count": 0,
+                "distinct_count": 5,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "bucket",
+                    "Unknown",
+                    "bucket",
+                    "bucket",
+                    "Unknown",
+                    "distribution",
+                    "bucket",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 1000
+                },
+                "short_description": "The type of AWS resource used.",
+                "long_description": "Specifies the type of AWS resource (e.g., EC2, S3, RDS). Values are strings with lengths between 6 and 12 characters, all matching the 'all_letters' pattern."
+            },
+            "servicecategory": {
+                "null_count": 0,
+                "distinct_count": 10,
+                "data_type": "object",
+                "sample_values": [
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Networking",
+                    "Storage",
+                    "Compute",
+                    "Compute"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 937
+                },
+                "short_description": "The category of the AWS service.",
+                "long_description": "Categorizes the AWS service (e.g., 'Compute', 'Storage'). Values are strings with lengths between 7 and 25 characters.  Most values use the 'all_letters' pattern."
+            },
+            "servicename": {
+                "null_count": 0,
+                "distinct_count": 35,
+                "data_type": "object",
+                "sample_values": [
+                    "Amazon Elastic Compute Cloud",
+                    "Amazon Simple Storage Service",
+                    "Amazon FSx",
+                    "Amazon Simple Storage Service",
+                    "Amazon Simple Storage Service",
+                    "Amazon Elastic Compute Cloud",
+                    "Amazon CloudFront",
+                    "Amazon Simple Storage Service",
+                    "AWS Step Functions",
+                    "Amazon Elastic Compute Cloud"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 35,
+                "common_patterns": {
+                    "all_letters": 41,
+                    "alphanumeric": 10
+                },
+                "short_description": "The name of the AWS service.",
+                "long_description": "Provides the name of the AWS service (e.g., 'Amazon EC2', 'Amazon S3'). Values are strings with lengths from 7 to 35 characters. There is some alphanumeric usage, but mostly it uses the all_letters pattern."
+            },
+            "skuid": {
+                "null_count": 0,
+                "distinct_count": 187,
+                "data_type": "object",
+                "sample_values": [
+                    "NR674TZUSQXFCVM8",
+                    "PM7SF7GUUSEM94ZC",
+                    "UBUU95WUVH95QV7U",
+                    "ZE67FX933AEQ43H2",
+                    "ZE67FX933AEQ43H2",
+                    "69EGQ83GFYZBFNWU",
+                    "C3HHMR3U9CR9AK63",
+                    "ZE67FX933AEQ43H2",
+                    "FD3VCRWY9DWQNNR2",
+                    "5D2MW78KPJPRV7WA"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 16,
+                "common_patterns": {
+                    "alphanumeric": 989,
+                    "all_letters": 11
+                },
+                "short_description": "The SKU ID for the service.",
+                "long_description": "Represents the SKU (Stock Keeping Unit) ID. Values are strings with lengths between 7 and 16 characters. Most of the values follow 'alphanumeric', though some adhere to the 'all_letters' pattern."
+            },
+            "skupriceid": {
+                "null_count": 0,
+                "distinct_count": 191,
+                "data_type": "object",
+                "sample_values": [
+                    "NR674TZUSQXFCVM8.JRTCKXETXF.6YS6EN2CT7",
+                    "PM7SF7GUUSEM94ZC.JRTCKXETXF.6YS6EN2CT7",
+                    "UBUU95WUVH95QV7U.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "69EGQ83GFYZBFNWU.JRTCKXETXF.6YS6EN2CT7",
+                    "C3HHMR3U9CR9AK63.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "FD3VCRWY9DWQNNR2.JRTCKXETXF.6YS6EN2CT7",
+                    "5D2MW78KPJPRV7WA.JRTCKXETXF.6YS6EN2CT7"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 38,
+                "common_patterns": {
+                    "alphanumeric": 999,
+                    "all_letters": 1
+                },
+                "short_description": "The ID associated with the SKU price.",
+                "long_description": "Stores the ID associated with the price for a particular SKU.  It's an object with lengths from 7 to 38 characters. Nearly all entries match the 'alphanumeric' pattern, with a few 'all_letters' patterns."
+            },
+            "subaccountid": {
+                "null_count": 0,
+                "distinct_count": 171,
+                "data_type": "float64",
+                "sample_values": [
+                    235046000000.0,
+                    235046000000.0,
+                    869402000000.0,
+                    52215556563.0,
+                    110781000000.0,
+                    176818000000.0,
+                    646925000000.0,
+                    291212000000.0,
+                    234623000000.0,
+                    234623000000.0
+                ],
+                "min_value": 12141219082.0,
+                "max_value": 996430000000.0,
+                "short_description": "The ID of the sub-account associated with the cost.",
+                "long_description": "The unique identifier for the sub-account related to the cost, given as a float64. It has a value range from 12141219082.0 to 996430000000.0, and 171 distinct values."
+            },
+            "subaccountname": {
+                "null_count": 0,
+                "distinct_count": 173,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-bf-cgvcf57-abacebq",
+                    "gsafj-bf-cgvcf57-abacebq",
+                    "gsafj-pbecbengrvg-rdhvcfvg-abacebq",
+                    "gsafj-nqfg-qvpr-qri",
+                    "ezf-onuf-njf-abacebq",
+                    "gsafj-pbr-rdhvcfcg-abacebq",
+                    "gsafj-nqfg-qvpr-cebq",
+                    "gsafj-gfq-gznc-abacebq",
+                    "gsafj-nnv-qngncyngsbez-cebq",
+                    "gsafj-nnv-qngncyngsbez-cebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 14,
+                "max_length": 38,
+                "common_patterns": {
+                    "alphanumeric": 46
+                },
+                "short_description": "The name of the sub-account.",
+                "long_description": "The name assigned to the sub-account. It's a string with lengths from 14 to 38 characters. The alphanumeric pattern is seen frequently."
+            },
+            "tags": {
+                "null_count": 0,
+                "distinct_count": 540,
+                "data_type": "object",
+                "sample_values": [
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"Name\",\n      \"value\": \"dev8-gtfsprovider\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-os-ptips02-nonprod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000132020\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-os-ptips02-nonprod\"\n    },\n    {\n      \"key\": \"CostCentre\",\n      \"value\": \"TBD\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000132020\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-corporateit-equipsit-nonprod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"1000182124\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-adst-dice-dev\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000182125\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"Application_Name\",\n      \"value\": \"ArcGis Platform\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"ArcGis Platform\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000182133\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-coe-equipspt-nonprod\"\n    },\n    {\n      \"key\": \"map-migrated\",\n      \"value\": \"sap45200\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"Site\",\n      \"value\": \"mps-fe\"\n    },\n    {\n      \"key\": \"Name\",\n      \"value\": \"mps-fe-mps-fe-prod-cloudfront\"\n    },\n    {\n      \"key\": \"SolutionName\",\n      \"value\": \"mps-fe\"\n    },\n    {\n      \"key\": \"CostCentre\",\n      \"value\": \"cds\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-tsd-tmap-nonprod\"\n    },\n    {\n      \"key\": \"ccoe:default:sub-env\",\n      \"value\": \"rat\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000141022\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"A_3\",\n      \"value\": \"prod\"\n    },\n    {\n      \"key\": \"A_2\",\n      \"value\": \"ops\"\n    },\n    {\n      \"key\": \"A_1\",\n      \"value\": \"internal\"\n    },\n    {\n      \"key\": \"A_4\",\n      \"value\": \"etl-opal-batch\"\n    }\n  ]\n}",
+                    "{\n  \"key_value\": [\n    {\n      \"key\": \"Name\",\n      \"value\": \"789177034570-NATGW-AZA\"\n    },\n    {\n      \"key\": \"ccoe:default:app-ci\",\n      \"value\": \"tfnsw-aai-dataplatform-prod\"\n    },\n    {\n      \"key\": \"ccoe:org:cost-code\",\n      \"value\": \"0000131039\"\n    }\n  ]\n}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 2141,
+                "common_patterns": {
+                    "alphanumeric": 742,
+                    "all_letters": 167
+                },
+                "short_description": "Tags associated with the resource.",
+                "long_description": "This column holds tags associated with the AWS resource, useful for cost allocation and filtering. Values are strings with lengths between 7 and 2141 characters. It includes a mix of alphanumeric and 'all_letters' patterns."
+            },
+            "x_discounts": {
+                "null_count": 0,
+                "distinct_count": 392,
+                "data_type": "object",
+                "sample_values": [
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":0.000000000000000e+00}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.050000000000000e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.050000000000000e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-2.100000000000000e-09},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-2.100000000000000e-09}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.936000000000000e-07},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.936000000000000e-07}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-9.680000000000001e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-9.680000000000001e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":0.000000000000000e+00}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-9.680000000000001e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-9.680000000000001e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-5.500000000000000e-06},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-5.500000000000000e-06}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.471712000000000e-04},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.471712000000000e-04}]}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 150,
+                "max_length": 182,
+                "common_patterns": {
+                    "alphanumeric": 1000
+                },
+                "short_description": "Details about discounts applied.",
+                "long_description": "Contains details regarding discounts applied to the cost. The values are strings with lengths between 150 and 182 characters, and all entries matching the 'alphanumeric' pattern."
+            },
+            "x_operation": {
+                "null_count": 0,
+                "distinct_count": 133,
+                "data_type": "object",
+                "sample_values": [
+                    "CreateVolume-Gp3",
+                    "ReadBucketReplication",
+                    "CreateFileSystem:ONTAP",
+                    "ReadBucketPublicAccessBlock",
+                    "ReadVersioningProps",
+                    "CreateVolume-Gp3",
+                    "POST",
+                    "ReadBucketReplication",
+                    "Choice",
+                    "PublicIP-In"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 1,
+                "max_length": 32,
+                "common_patterns": {
+                    "alphanumeric": 221,
+                    "all_letters": 691
+                },
+                "short_description": "The operation performed.",
+                "long_description": "Indicates the specific operation performed (e.g., 'RunInstances', 'GetObject'). Values are strings with lengths between 1 and 32 characters, and are primarily 'all_letters' or 'alphanumeric'."
+            },
+            "x_servicecode": {
+                "null_count": 0,
+                "distinct_count": 35,
+                "data_type": "object",
+                "sample_values": [
+                    "AmazonEC2",
+                    "AmazonS3",
+                    "AmazonFSx",
+                    "AmazonS3",
+                    "AmazonS3",
+                    "AmazonEC2",
+                    "AmazonCloudFront",
+                    "AmazonS3",
+                    "AmazonStates",
+                    "AmazonEC2"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 21,
+                "common_patterns": {
+                    "alphanumeric": 573,
+                    "all_letters": 427
+                },
+                "short_description": "The service code for the charge.",
+                "long_description": "The code associated with the AWS service incurring the charge. Values are strings with lengths from 6 to 21 characters, with many entries following the 'alphanumeric' pattern, with a significant amount of 'all_letters' patterns as well."
+            },
+            "x_usagetype": {
+                "null_count": 0,
+                "distinct_count": 177,
+                "data_type": "object",
+                "sample_values": [
+                    "APS2-EBS:VolumeP-Throughput.gp3",
+                    "APS2-USE1-AWS-Out-Bytes",
+                    "APS2-BackupUsage",
+                    "APS2-Requests-Tier2",
+                    "APS2-Requests-Tier2",
+                    "APS2-EBS:VolumeP-IOPS.gp3",
+                    "EU-DataTransfer-Out-OBytes",
+                    "APS2-Requests-Tier2",
+                    "APS2-StateTransition",
+                    "APS2-DataTransfer-Regional-Bytes"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 45,
+                "common_patterns": {
+                    "alphanumeric": 983,
+                    "all_letters": 1
+                },
+                "short_description": "The type of usage for the service.",
+                "long_description": "Specifies the specific type of usage for the service (e.g., 'BoxUsage:t2.micro', 'DataTransfer-Out-Bytes'). Values are strings with lengths between 7 and 45 characters. The 'alphanumeric' pattern is prominent, with some matching 'all_letters'."
+            }
+        },
+        "llm_summaries_generated": true
+    }
+}

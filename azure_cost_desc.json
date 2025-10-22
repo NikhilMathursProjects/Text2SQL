@@ -1,0 +1,174 @@
+{
+  "billedcost": {
+    "short_description": "Represents the actual cost billed for the Azure resource usage.",
+    "long_description": "This column contains the cost in a currency for the Azure resource consumption. The data type is float64, with values ranging from 0.0 to 992.33. It represents the finalized and invoiced cost, after discounts and adjustments."
+  },
+  "billingaccountid": {
+    "short_description": "Identifies the billing account associated with the Azure usage.",
+    "long_description": "This column contains a unique identifier for the billing account. The data type is object, containing alphanumeric strings of length 53. All 5000 rows have the same value, indicating all usage is associated with a single billing account."
+  },
+  "billingaccountname": {
+    "short_description": "Provides the name of the billing account.",
+    "long_description": "This column stores the human-readable name of the billing account. The data type is object, and the values are strings of length 17. All rows share the same billing account name since there is only one distinct value."
+  },
+  "billingaccounttype": {
+    "short_description": "Specifies the type of the billing account.",
+    "long_description": "This column categorizes the type of billing account, offering context to billing structure. The data type is object, with all values having the same billing account type. The string length is 15."
+  },
+  "billingcurrency": {
+    "short_description": "Indicates the currency used for billing.",
+    "long_description": "Specifies the currency used for billing costs. The data type is object, with the value being an all letter string of length 3 (e.g., USD, EUR). This column indicates all costs are billed in a single currency for the sample data."
+  },
+  "billingperiodend": {
+    "short_description": "Defines the end date of the billing period.",
+    "long_description": "This column indicates the end date and time of the billing period, typically represented in a specific format (e.g., ISO 8601). The data type is object, and values are strings of length 23, with only 3 distinct values indicating a small number of billing periods covered by the data."
+  },
+  "billingperiodstart": {
+    "short_description": "Defines the start date of the billing period.",
+    "long_description": "This column contains the start date and time of the billing period. The data type is object, with a string length of 23. It complements 'billingperiodend' to define the billing cycle. There are 3 distinct start dates in the dataset."
+  },
+  "chargecategory": {
+    "short_description": "Categorizes the type of charge.",
+    "long_description": "Classifies the type of charge associated with the Azure resource usage, which can have an influence on discounts or financial planning. It's a string object with a length between 5 and 8 characters and only 2 distinct values."
+  },
+  "chargedescription": {
+    "short_description": "Provides a description of the charge.",
+    "long_description": "Offers a textual explanation of the charges. The data type is object. The length of the strings ranges from 7 to 109 characters. Contains 381 distinct values, meaning the charges are explained more granularly."
+  },
+  "chargefrequency": {
+    "short_description": "Indicates how frequently the charge occurs.",
+    "long_description": "This column shows how often the charges appear, for example, Monthly or one-time. The data type is object, with string lengths of 9-11 and only 2 distinct values, indicating a limited set of frequency options. The pattern indicates only one instance using letters."
+  },
+  "chargeperiodend": {
+    "short_description": "Defines the end date of the charge period.",
+    "long_description": "Specifies the end date and time for the charging cycle. The data type is object, represented by strings of length 23, with 92 distinct values indicating a relatively fine-grained charge period. It provides granularity related to the charges."
+  },
+  "chargeperiodstart": {
+    "short_description": "Defines the start date of the charge period.",
+    "long_description": "Specifies the start date and time for the charging cycle. The data type is object, and values are strings of length 23, corresponding to the start of the billing. There are 92 distinct start dates."
+  },
+  "commitmentdiscountcategory": {
+    "short_description": "Categorizes the commitment discount applied to the cost.",
+    "long_description": "Categorizes the type of commitment discount applied to the billed cost, if any. The data type is object, using strings of length between 5 to 7 characters, and 3 unique values."
+  },
+  "commitmentdiscountid": {
+    "short_description": "Identifies the specific commitment discount applied.",
+    "long_description": "Contains an identifier for the commitment discount. The data type is object, with a string length between 7 and 141. The strings show different patterns, alphanumeric and letter combinations, used for discount identification."
+  },
+  "commitmentdiscountname": {
+    "short_description": "Provides the name of the commitment discount.",
+    "long_description": "Contains the human-readable name of the commitment discount. The data type is object, and string lengths are between 7 to 36 characters. Some alphanumeric patterns are observed indicating variations in the discount names."
+  },
+  "commitmentdiscountstatus": {
+    "short_description": "Indicates the status of the commitment discount.",
+    "long_description": "States the current status of the commitment discount (e.g., Active, Expired). The data type is object, strings of lengths 4 to 7, and 3 distinct values. All 5000 rows fit a pattern for only letters, indicating a fixed state."
+  },
+  "commitmentdiscounttype": {
+    "short_description": "Specifies the type of commitment discount.",
+    "long_description": "Specifies the type of commitment discount. The data type is object, using strings of length 7 to 12 characters. The dataset reveals 3 distinct values, and the patterns reveal that it has many letters."
+  },
+  "consumedquantity": {
+    "short_description": "Represents the amount of a resource used, e.g., GB of storage.",
+    "long_description": "This column shows the amount of a resource consumed during the billing period. The data type is float64, and the value range is from 0.0 to 10751877.999999996. The column helps to identify resource consumption."
+  },
+  "consumedunit": {
+    "short_description": "Specifies the unit of measurement for the consumed quantity (e.g., GB, hours).",
+    "long_description": "Defines the unit for the 'consumedquantity'. The data type is object. The string length varies from 2 to 11 characters. 13 distinct values are identified, offering insight into resource usage. Many values are composed of letters."
+  },
+  "contractedcost": {
+    "short_description": "The cost of the resource, before discounts.",
+    "long_description": "This column represents the cost before applying discounts or other adjustments. The data type is float64, the value range spans from 0.0 to 992.32695. The amount shows the base cost from the subscription or agreement."
+  },
+  "contractedunitprice": {
+    "short_description": "The unit price based on the agreement, e.g. per GB.",
+    "long_description": "This column contains the unit price as per the agreement for the consumed resource. The data type is float64. It has a value range spanning from 0.0 to 3985.3476, with 259 distinct values."
+  },
+  "effectivecost": {
+    "short_description": "The actual cost after discounts.",
+    "long_description": "This column reflects the final cost after the application of any discounts. The data type is float64 and ranges from 0.0 to 992.32695. The column gives the real cost the user pays for the resources used."
+  },
+  "invoiceissuername": {
+    "short_description": "Identifies the entity that issued the invoice.",
+    "long_description": "Indicates the name of the entity that issued the invoice. The data type is object, with the string length of 9 and only 1 unique value, indicating a standardized invoicing entity.  All 5000 rows have the same value."
+  },
+  "listcost": {
+    "short_description": "The list price before any discounts.",
+    "long_description": "The column stores the list price for the resource usage before any discounts are applied. The data type is float64. The values range from 0.0 to 1161.63, reflecting the initial cost."
+  },
+  "listunitprice": {
+    "short_description": "The unit price before discounts.",
+    "long_description": "This column contains the unit price of the resources consumed before discounts. The data type is float64. The range is 0.0 to 4664.88, allowing the calculation of discounts. There are 249 distinct values."
+  },
+  "pricingcategory": {
+    "short_description": "Categorizes the type of pricing model used.",
+    "long_description": "This column provides information about the pricing category associated with the resource usage. The data type is object, with a string length of 7-9 characters. The pattern indicates the use of all letters. There are 3 distinct values."
+  },
+  "pricingquantity": {
+    "short_description": "The quantity of resources used for pricing.",
+    "long_description": "This column defines the quantity used to calculate the price, such as the number of hours of usage. The data type is float64. There are 2481 distinct values, with a range from 0.0 to 64602.0."
+  },
+  "pricingunit": {
+    "short_description": "Specifies the unit used for pricing (e.g., hours, GB).",
+    "long_description": "Specifies the unit for the 'pricingquantity'. The data type is object, with string lengths between 2 and 11, and has 12 distinct values. Patterns of all letters indicate the nature of the unit."
+  },
+  "providername": {
+    "short_description": "Identifies the service provider, usually Azure.",
+    "long_description": "Indicates the service provider (Azure). The data type is object, with string length of 9 and 1 distinct value. All the data points come from the same provider. The pattern shows only letters."
+  },
+  "publishername": {
+    "short_description": "Name of the publisher offering the service.",
+    "long_description": "Identifies the publisher associated with the resource being used (e.g., Microsoft). The data type is object. The length of the strings varies from 7 to 35 characters, and there are 4 distinct values."
+  },
+  "regionid": {
+    "short_description": "The ID of the Azure region where the resource is deployed.",
+    "long_description": "Provides the unique identifier of the Azure region where the resource is deployed (e.g., eastus). The data type is object, with a string length between 6 to 18 characters. There are 12 distinct values."
+  },
+  "regionname": {
+    "short_description": "The name of the Azure region.",
+    "long_description": "Specifies the name of the Azure region. The data type is object. The lengths of the strings are from 6 to 19 characters, with 12 distinct values. Region names help identify geographic deployment locations."
+  },
+  "resourceid": {
+    "short_description": "The unique identifier of the Azure resource.",
+    "long_description": "Contains the unique resource identifier, which can be used to track specific Azure resources (e.g., virtual machines). The data type is object. The string length ranges from 7 to 220 characters. It offers 3873 distinct values."
+  },
+  "resourcename": {
+    "short_description": "The name given to the Azure resource.",
+    "long_description": "Provides the user-defined name of the Azure resource. The data type is object, with lengths ranging from 3 to 88 characters. It contains 3956 distinct values. The data reveals that there are alphanumeric values."
+  },
+  "resourcetype": {
+    "short_description": "The type of the Azure resource (e.g., virtual machine, storage account).",
+    "long_description": "Categorizes the type of the Azure resource (e.g., virtual machine, storage account). The data type is object, and values are strings with length varying from 4 to 70 characters.  There are 74 distinct resource types in the dataset."
+  },
+  "servicecategory": {
+    "short_description": "Categorizes the Azure service.",
+    "long_description": "Categorizes the Azure service (e.g., Compute, Storage). The data type is object. It varies from 3 to 25 characters, with 13 distinct values.  The values are mostly alphabetical strings."
+  },
+  "servicename": {
+    "short_description": "The name of the Azure service used.",
+    "long_description": "Identifies the name of the Azure service, such as 'Virtual Machines' or 'Storage'. The data type is object, with string lengths ranging from 5 to 30 characters.  There are 48 distinct values."
+  },
+  "skuid": {
+    "short_description": "The SKU (Stock Keeping Unit) for the resource.",
+    "long_description": "This column represents the SKU of the Azure resource. The data type is float64. It contains 380 distinct values, with a range between 0.0 and 616988881.0, reflecting the pricing details for the service."
+  },
+  "skupriceid": {
+    "short_description": "The price identifier for the SKU.",
+    "long_description": "Contains the price identifier related to the SKU. The data type is int64. It shares the same number of distinct values as 'skuid' (380). The range spans from -2 to 616988881.0, showing the pricing context for the services."
+  },
+  "subaccountid": {
+    "short_description": "The identifier of the subaccount.",
+    "long_description": "This column presents the identifier for the subaccount, allowing the cost to be allocated to sub-organizations or departments within the billing account. The data type is object. The string lengths range from 7 to 51 characters, and there are 151 unique subaccount IDs."
+  },
+  "subaccountname": {
+    "short_description": "The name of the subaccount.",
+    "long_description": "Provides the name of the subaccount. The data type is object. The string length varies between 7 and 43 characters, with 151 distinct values.  This column is used in organizing and analyzing costs."
+  },
+  "subaccounttype": {
+    "short_description": "The type of subaccount.",
+    "long_description": "Categorizes the type of subaccount. The data type is object, using strings of lengths between 7 and 12 characters. The dataset reveals 2 distinct values, and the strings are all comprised of letters."
+  },
+  "tags": {
+    "short_description": "User-defined tags associated with the resource.",
+    "long_description": "This column stores user-defined tags associated with the Azure resources. These tags enable cost allocation, organization, and filtering of resource usage. The data type is object. The string length spans from 2 to 114 characters, with 583 distinct values."
+  }
+}
