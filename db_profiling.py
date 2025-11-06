@@ -6,14 +6,18 @@ from collections import defaultdict
 import time
 
 class DatabaseProfiler:
-    def __init__(self, db_path='cloud_costs.db'):
+    def __init__(self,table_map, db_path='cloud_costs.db'):
+        """
+        Init the db profiler
+        """
         self.db_path = db_path
         self.conn = sqlite3.connect(db_path)
         self.profile_map={}
-        self.tables=[
-            'aws_cost_usage',
-            'azure_cost_usage',
-        ]
+        # self.tables=[
+        #     'aws_cost_usage',
+        #     'azure_cost_usage',
+        # ]
+        self.tables=table_map
     
     def profile_all_tables(self):
         """Returns the statistical profiling of all tables."""

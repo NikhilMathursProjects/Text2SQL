@@ -1,23 +1,28 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException,UploadFile,Form
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-import json
 import google.generativeai as genai
+
 import os
+from pathlib import Path
+from typing import List
 from dotenv import load_dotenv
+
 import sqlite3
 import pandas as pd
+import json
+
+from db_setup import DatabaseSetup
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
 app = FastAPI()
-
 class QueryRequest(BaseModel):
     user_query: str
 
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
+#------ for the main api--------
 def get_profile_descriptions():
     with open('all_profiles.json','r') as f:
         all_profiles = json.load(f)
@@ -70,7 +75,7 @@ SQL: {sql_query}
 Results: {len(sql_results)} records
 
 Answer:"""
-    
+
     response = model.generate_content(prompt)
     return response.text.strip()
 
@@ -88,6 +93,13 @@ async def text_to_sql(request: QueryRequest):
         "records_returned": len(sql_results)
     })
 
+#-------------main api complete-----------------------
+
+# @app.post("/upload_csv")
+# def uploads_data_to_db(folder_name: str = Form(...),files: List[UploadFile] = []):
+    
+
+    
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=False)

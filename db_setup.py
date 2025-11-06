@@ -8,13 +8,14 @@ from typing import Dict, List, Optional
 logger = logging.getLogger(__name__)
 
 class DatabaseSetup:
-    def __init__(self, db_path='cloud_costs.db'):
+    def __init__(self,required_data_map,dir_path='uploads', db_path='cloud_costs.db'):
         self.db_path = db_path
-        self.data_dir = Path("mock_data_sets")
-        self.required_data_map = {
-            'aws_cost_usage': self.data_dir/'aws_cost_usage.csv',
-            'azure_cost_usage': self.data_dir/'azure_cost_usage.csv'
-        }
+        self.data_dir = Path(dir_path)
+        # self.required_data_map = {
+        #     'aws_cost_usage': self.data_dir/'aws_cost_usage.csv',
+        #     'azure_cost_usage': self.data_dir/'azure_cost_usage.csv'
+        # }
+        self.required_data_map=required_data_map
         self.conn = None
         self.loaded_tables = {}
     
@@ -216,7 +217,7 @@ class DatabaseSetup:
                 'columns': info.get('verified_columns', []),
                 'source_file': info.get('file_source', 'Unknown')
             }
-          
+        print("summary complete (there is actually a summary(its not empty))")
         return summary
     
     def setup_complete(self) -> bool:
