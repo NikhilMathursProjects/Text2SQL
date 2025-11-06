@@ -3,7 +3,8 @@ queries=["Show me the total compute cost for Azure grouped by service.",
  "Which AWS region had the highest spend last month?",
  "What is the daily trend of S3 storage cost?",
  "What is EC2 usage by instance type?",
- "Show cost by environment tag."]
+#  "Show cost by environment tag."
+ ]
 
 for query in queries:
     print("=="*50)
