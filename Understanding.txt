@@ -1,0 +1,32 @@
+Basically right now i have to:
+- Allow user to call api endpoint to take csv files from folder `uploads` and convert it into tables in the database.
+The csv names are important as that is how the tables are named.
+Thus we need to ensure that if some csv has the same table name:
+    - Ensure that if a table with the same name already exists, we do not change anything
+    - [Later Update] if same name, we check how different it is and if it has more data ,then we replace else dont.
+
+
+In api_caller.py :
+    (using tkinter for the file opener)
+    place the file input thing, so that the file can be placed and then send that over the api,
+    which then will store the csv data in 'uploads/'. --->DONE 
+    Then take the files just uploaded and perform db_setup(load_datasets)
+    Which will insert the csv data as tables after cleaning the data etc.
+In the pipeline:
+    ------DATA HAS BEEN STORED FROM api_caller.py------
+    Now to place the basic data summary of the tables: This will be stored in 'all_summaries.json' file
+    This file contains basic data such as number of rows and columns,column names etc for all the tables in the database
+    ------SIMPLE SUMMARY DATA STORED------ 
+    Now we have to profile the data, so we have db_profiling.py for that.
+    This creates the basic statistical profile for each table in the db.
+    store this in all_profiles.json
+    ------SIMPLE PROFILE STORED-------
+    Now we have to get the llm summaries for the basic profile data.
+    So, for each table not already in all_llm_profiles.json , i will call the llm api to create the long, short descriptions for the table
+    Then i will update the new complete profile in all_llm_profiles.json (called this since the llm profiling is the last part in this method)
+    ------COMPLETE PROFILE STORED---------
+    Now that the data has been stored and profiled, i have to allow a user to query on it, so when asking the llm a question,i cannot give it the entire complete profiles for all tables
+    1.ill have to instead rely on just giving it the table name and the columns, for all tables in the db so that it can choose which tables it needs the profiles of
+    2.and then i pass the profile data to the llm with user query etc, to generate the sql query
+    3.Then query the db with the sql query and then pass that data to the llm and generate a summary
+    In total i have done for 1 query (3 llm calls after creating the complete profile for the data inputted)

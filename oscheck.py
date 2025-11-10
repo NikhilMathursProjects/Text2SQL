@@ -34,13 +34,14 @@ def save_summaries(summary_file, summaries):
 
 #Gets the required map(all data in the upload dir)
 required_map = list_upload_dir()
+print(required_map)
 print("Detected CSVs:", required_map)
 
 #Database setup
 setup = DatabaseSetup(required_map)
 setup.setup_complete()
 summary = setup.get_database_summary()  #gets simple summary
-
+print(summary)
 #loads existing summary from the summary file
 all_profiles = load_existing_summaries(SUMMARY_FILE)
 print("Existing tables:", list(all_profiles.keys()) if all_profiles else "None")

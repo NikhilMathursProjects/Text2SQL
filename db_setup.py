@@ -60,7 +60,7 @@ class DatabaseSetup:
             if self._load_single_dataset(table_name, file_path):
                 success_count += 1
         
-        logger.info(f"📊 Successfully loaded {success_count} out of {len(existing_files)} datasets")
+        logger.info(f"Successfully loaded {success_count} out of {len(existing_files)} datasets")
         return success_count > 0
     
     def _load_single_dataset(self, table_name: str, file_path: Path) -> bool:
@@ -70,15 +70,15 @@ class DatabaseSetup:
             
             #read CSV file
             df = pd.read_csv(file_path)
-            logger.info(f"Read {len(df)} rows, {len(df.columns)} columns")
+            logger.info(f"Read csv at {file_path},{len(df)} rows, {len(df.columns)} columns")
             
-            # Clean the dataframe
+            #cleans the dataframe
             df_cleaned = self.clean_dataframe(df, file_path.name)
             
-            # Load into database
+            #loads into the db
             df_cleaned.to_sql(table_name, self.conn, if_exists='replace', index=False)
             
-            # Store metadata
+            #places metadata into the loaded_tables dict
             self.loaded_tables[table_name] = {
                 'original_rows': len(df),
                 'cleaned_rows': len(df_cleaned),
@@ -155,6 +155,7 @@ class DatabaseSetup:
             # logger.info("=" * 50)
             
             for table in tables:
+                print(table)
                 cursor.execute(f"SELECT COUNT(*) FROM {table}")
                 row_count = cursor.fetchone()[0]
                 
