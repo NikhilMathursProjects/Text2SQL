@@ -101,8 +101,21 @@ if __name__=="__main__":
     profiler=DatabaseProfiler()
     total_profile=profiler.profile_all_tables()
     # print(total_profile)        
-    for profile in total_profile:
-        print(total_profile[profile])
-        print("=="*50)
+    print(total_profile['aws_cost_usage']['columns'].keys())
+    # for profile in total_profile:
+    #     print(total_profile[profile])
+    #     print("=="*50)
         # time.sleep(10)
 
+
+"""
+profile_table={
+    'aws_cost_usage':
+    {
+        'table_name':,
+        'row_count':,
+        'columns':[...],
+    }
+}
+
+"""

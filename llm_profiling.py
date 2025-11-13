@@ -10,8 +10,13 @@ from db_profiling import DatabaseProfiler
 import json
 class LLMProfilingSummarizer:
     def __init__(self, llm_client):
+        """
+        Just inititalizes the llm client (openai, gemini etc)
+        """
         self.llm_client = llm_client
-    
+
+
+    #next func
     def create_profile_prompt(self, table_name, profile_data):
         """Create a comprehensive prompt for all columns in a table"""
         

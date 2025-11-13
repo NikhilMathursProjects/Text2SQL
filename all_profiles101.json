@@ -1,0 +1,2001 @@
+{
+    "aws_cost_usage": {
+        "table_name": "aws_cost_usage",
+        "row_count": 1000,
+        "columns": {
+            "availabilityzone": {
+                "null_count": 0,
+                "distinct_count": 5,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "ap-southeast-2",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 15,
+                "common_patterns": {
+                    "all_letters": 971,
+                    "alphanumeric": 29
+                }
+            },
+            "billedcost": {
+                "null_count": 0,
+                "distinct_count": 412,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13
+            },
+            "billingaccountid": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "float64",
+                "sample_values": [
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0,
+                    428183000000.0
+                ],
+                "min_value": 428183000000.0,
+                "max_value": 428183000000.0
+            },
+            "billingaccountname": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq",
+                    "gsafj-nalpybhq-zcn57-cebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 25,
+                "max_length": 25,
+                "common_patterns": {
+                    "alphanumeric": 1000
+                }
+            },
+            "billingcurrency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD",
+                    "USD"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "billingperiodend": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {}
+            },
+            "billingperiodstart": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {}
+            },
+            "chargecategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 5,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "chargedescription": {
+                "null_count": 0,
+                "distinct_count": 169,
+                "data_type": "object",
+                "sample_values": [
+                    "$0.048 per provisioned MiBps-month of gp3 - Asia Pacific (Sydney)",
+                    "$0.098 per GB - Asia Pacific (Sydney) data transfer to US East (Northern Virginia)",
+                    "$0.055 per GB-Month of ONTAP backup storage - Asia Pacific (Sydney)",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.006 per provisioned IOPS-month of gp3 - Asia Pacific (Sydney)",
+                    "$0.020 per GB - All data transfer out to Origin (Europe)",
+                    "$0.0044 per 10,000 GET and all other requests",
+                    "$0.000025 per state transition",
+                    "$0.010 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 16,
+                "max_length": 101,
+                "common_patterns": {
+                    "alphanumeric": 980
+                }
+            },
+            "chargefrequency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 11,
+                "max_length": 11,
+                "common_patterns": {}
+            },
+            "chargeperiodend": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {}
+            },
+            "chargeperiodstart": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0",
+                    "00:00.0"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 7,
+                "common_patterns": {}
+            },
+            "commitmentdiscountcategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "commitmentdiscountid": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 83,
+                "common_patterns": {
+                    "all_letters": 976,
+                    "alphanumeric": 24
+                }
+            },
+            "commitmentdiscountstatus": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "commitmentdiscounttype": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 976
+                }
+            },
+            "consumedquantity": {
+                "null_count": 0,
+                "distinct_count": 463,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.852e-07,
+                    1.702e-07,
+                    2.0,
+                    1.0,
+                    0.0,
+                    5.4296e-06,
+                    1.0,
+                    1.0,
+                    0.066896012
+                ],
+                "min_value": 0.0,
+                "max_value": 299392.0
+            },
+            "consumedunit": {
+                "null_count": 0,
+                "distinct_count": 33,
+                "data_type": "object",
+                "sample_values": [
+                    "GiB/Second-Months",
+                    "GB",
+                    "GB-Months",
+                    "Requests",
+                    "Requests",
+                    "IOPS-Months",
+                    "GB",
+                    "Requests",
+                    "StateTransitions",
+                    "GB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 24,
+                "common_patterns": {
+                    "all_letters": 597,
+                    "alphanumeric": 3
+                }
+            },
+            "contractedcost": {
+                "null_count": 0,
+                "distinct_count": 433,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13
+            },
+            "contractedunitprice": {
+                "null_count": 0,
+                "distinct_count": 263,
+                "data_type": "float64",
+                "sample_values": [
+                    38.33856,
+                    0.076463314,
+                    0.042890717,
+                    3.432e-07,
+                    3.432e-07,
+                    0.00468,
+                    0.020001473,
+                    3.432e-07,
+                    1.95e-05,
+                    0.0078
+                ],
+                "min_value": 0.0,
+                "max_value": 38.33856468
+            },
+            "effectivecost": {
+                "null_count": 0,
+                "distinct_count": 435,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    3.71e-08,
+                    7.3e-09,
+                    6.864e-07,
+                    3.432e-07,
+                    0.0,
+                    1.086e-07,
+                    3.432e-07,
+                    1.95e-05,
+                    0.000521789
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13
+            },
+            "invoiceissuername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd",
+                    "Amazon Web Services Australia Pty Ltd"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 37,
+                "max_length": 37,
+                "common_patterns": {}
+            },
+            "listcost": {
+                "null_count": 0,
+                "distinct_count": 427,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.75e-08,
+                    9.4e-09,
+                    8.8e-07,
+                    4.4e-07,
+                    0.0,
+                    1.086e-07,
+                    4.4e-07,
+                    2.5e-05,
+                    0.00066896
+                ],
+                "min_value": 0.0,
+                "max_value": 9.13
+            },
+            "listunitprice": {
+                "null_count": 0,
+                "distinct_count": 85,
+                "data_type": "float64",
+                "sample_values": [
+                    49.152,
+                    0.098,
+                    0.055,
+                    4.4e-07,
+                    4.4e-07,
+                    0.006,
+                    0.02,
+                    4.4e-07,
+                    2.5e-05,
+                    0.01
+                ],
+                "min_value": 0.0,
+                "max_value": 49.152
+            },
+            "pricingcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "pricingquantity": {
+                "null_count": 0,
+                "distinct_count": 463,
+                "data_type": "float64",
+                "sample_values": [
+                    0.0,
+                    4.852e-07,
+                    1.702e-07,
+                    2.0,
+                    1.0,
+                    0.0,
+                    5.4296e-06,
+                    1.0,
+                    1.0,
+                    0.066896012
+                ],
+                "min_value": 0.0,
+                "max_value": 299392.0
+            },
+            "pricingunit": {
+                "null_count": 0,
+                "distinct_count": 33,
+                "data_type": "object",
+                "sample_values": [
+                    "GiB/Second-Months",
+                    "GB",
+                    "GB-Months",
+                    "Requests",
+                    "Requests",
+                    "IOPS-Months",
+                    "GB",
+                    "Requests",
+                    "StateTransitions",
+                    "GB"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 24,
+                "common_patterns": {
+                    "all_letters": 597,
+                    "alphanumeric": 3
+                }
+            },
+            "providername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS",
+                    "AWS"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "publishername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq",
+                    "Nznmba Jro Freivprf Nhfgenyvn Cgl Ygq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 37,
+                "max_length": 37,
+                "common_patterns": {}
+            },
+            "regionid": {
+                "null_count": 0,
+                "distinct_count": 19,
+                "data_type": "object",
+                "sample_values": [
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "eu-west-1",
+                    "ap-southeast-2",
+                    "ap-southeast-2",
+                    "ap-southeast-2"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 14,
+                "common_patterns": {
+                    "alphanumeric": 986,
+                    "all_letters": 14
+                }
+            },
+            "regionname": {
+                "null_count": 0,
+                "distinct_count": 26,
+                "data_type": "object",
+                "sample_values": [
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Europe",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)",
+                    "Asia Pacific (Sydney)"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 57
+                }
+            },
+            "resourceid": {
+                "null_count": 0,
+                "distinct_count": 717,
+                "data_type": "object",
+                "sample_values": [
+                    "iby-57n9r636p89777o84",
+                    "cgvcf-ohvyq-ffvf-onpxhcf-qnvyl",
+                    "arn:aws:fsx:ap-southeast-2:869402194052",
+                    "ertbs",
+                    "neptvf-pbasvt-fgber-neptvfqriubfg",
+                    "iby-5pqq3813s4915o352",
+                    "arn:aws:cloudfront::646924912074",
+                    "fyf-gznc-cg-genirycnggreaf-eng-qngnohpxrg-75dty2iv9svb",
+                    "arn:aws:states:ap-southeast-2:234622589025",
+                    "arn:aws:ec2:ap-southeast-2:234622589025"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 63,
+                "common_patterns": {
+                    "alphanumeric": 851,
+                    "all_letters": 72
+                }
+            },
+            "resourcetype": {
+                "null_count": 0,
+                "distinct_count": 5,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "bucket",
+                    "Unknown",
+                    "bucket",
+                    "bucket",
+                    "Unknown",
+                    "distribution",
+                    "bucket",
+                    "Unknown",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 1000
+                }
+            },
+            "servicecategory": {
+                "null_count": 0,
+                "distinct_count": 10,
+                "data_type": "object",
+                "sample_values": [
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Storage",
+                    "Networking",
+                    "Storage",
+                    "Compute",
+                    "Compute"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 937
+                }
+            },
+            "servicename": {
+                "null_count": 0,
+                "distinct_count": 35,
+                "data_type": "object",
+                "sample_values": [
+                    "Amazon Elastic Compute Cloud",
+                    "Amazon Simple Storage Service",
+                    "Amazon FSx",
+                    "Amazon Simple Storage Service",
+                    "Amazon Simple Storage Service",
+                    "Amazon Elastic Compute Cloud",
+                    "Amazon CloudFront",
+                    "Amazon Simple Storage Service",
+                    "AWS Step Functions",
+                    "Amazon Elastic Compute Cloud"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 35,
+                "common_patterns": {
+                    "all_letters": 41,
+                    "alphanumeric": 10
+                }
+            },
+            "skuid": {
+                "null_count": 0,
+                "distinct_count": 187,
+                "data_type": "object",
+                "sample_values": [
+                    "NR674TZUSQXFCVM8",
+                    "PM7SF7GUUSEM94ZC",
+                    "UBUU95WUVH95QV7U",
+                    "ZE67FX933AEQ43H2",
+                    "ZE67FX933AEQ43H2",
+                    "69EGQ83GFYZBFNWU",
+                    "C3HHMR3U9CR9AK63",
+                    "ZE67FX933AEQ43H2",
+                    "FD3VCRWY9DWQNNR2",
+                    "5D2MW78KPJPRV7WA"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 16,
+                "common_patterns": {
+                    "alphanumeric": 989,
+                    "all_letters": 11
+                }
+            },
+            "skupriceid": {
+                "null_count": 0,
+                "distinct_count": 191,
+                "data_type": "object",
+                "sample_values": [
+                    "NR674TZUSQXFCVM8.JRTCKXETXF.6YS6EN2CT7",
+                    "PM7SF7GUUSEM94ZC.JRTCKXETXF.6YS6EN2CT7",
+                    "UBUU95WUVH95QV7U.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "69EGQ83GFYZBFNWU.JRTCKXETXF.6YS6EN2CT7",
+                    "C3HHMR3U9CR9AK63.JRTCKXETXF.6YS6EN2CT7",
+                    "ZE67FX933AEQ43H2.JRTCKXETXF.6YS6EN2CT7",
+                    "FD3VCRWY9DWQNNR2.JRTCKXETXF.6YS6EN2CT7",
+                    "5D2MW78KPJPRV7WA.JRTCKXETXF.6YS6EN2CT7"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 38,
+                "common_patterns": {
+                    "alphanumeric": 999,
+                    "all_letters": 1
+                }
+            },
+            "subaccountid": {
+                "null_count": 0,
+                "distinct_count": 171,
+                "data_type": "float64",
+                "sample_values": [
+                    235046000000.0,
+                    235046000000.0,
+                    869402000000.0,
+                    52215556563.0,
+                    110781000000.0,
+                    176818000000.0,
+                    646925000000.0,
+                    291212000000.0,
+                    234623000000.0,
+                    234623000000.0
+                ],
+                "min_value": 12141219082.0,
+                "max_value": 996430000000.0
+            },
+            "subaccountname": {
+                "null_count": 0,
+                "distinct_count": 173,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-bf-cgvcf57-abacebq",
+                    "gsafj-bf-cgvcf57-abacebq",
+                    "gsafj-pbecbengrvg-rdhvcfvg-abacebq",
+                    "gsafj-nqfg-qvpr-qri",
+                    "ezf-onuf-njf-abacebq",
+                    "gsafj-pbr-rdhvcfcg-abacebq",
+                    "gsafj-nqfg-qvpr-cebq",
+                    "gsafj-gfq-gznc-abacebq",
+                    "gsafj-nnv-qngncyngsbez-cebq",
+                    "gsafj-nnv-qngncyngsbez-cebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 14,
+                "max_length": 38,
+                "common_patterns": {
+                    "alphanumeric": 46
+                }
+            },
+            "tags": {
+                "null_count": 0,
+                "distinct_count": 540,
+                "data_type": "object",
+                "sample_values": [
+                    "{  \"key_value\": [    {      \"key\": \"Name\",      \"value\": \"dev8-gtfsprovider\"    },    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-os-ptips02-nonprod\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000132020\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-os-ptips02-nonprod\"    },    {      \"key\": \"CostCentre\",      \"value\": \"TBD\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000132020\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-corporateit-equipsit-nonprod\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"1000182124\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-adst-dice-dev\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000182125\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"Application_Name\",      \"value\": \"ArcGis Platform\"    },    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"ArcGis Platform\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000182133\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-coe-equipspt-nonprod\"    },    {      \"key\": \"map-migrated\",      \"value\": \"sap45200\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"Site\",      \"value\": \"mps-fe\"    },    {      \"key\": \"Name\",      \"value\": \"mps-fe-mps-fe-prod-cloudfront\"    },    {      \"key\": \"SolutionName\",      \"value\": \"mps-fe\"    },    {      \"key\": \"CostCentre\",      \"value\": \"cds\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-tsd-tmap-nonprod\"    },    {      \"key\": \"ccoe:default:sub-env\",      \"value\": \"rat\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000141022\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"A_3\",      \"value\": \"prod\"    },    {      \"key\": \"A_2\",      \"value\": \"ops\"    },    {      \"key\": \"A_1\",      \"value\": \"internal\"    },    {      \"key\": \"A_4\",      \"value\": \"etl-opal-batch\"    }  ]}",
+                    "{  \"key_value\": [    {      \"key\": \"Name\",      \"value\": \"789177034570-NATGW-AZA\"    },    {      \"key\": \"ccoe:default:app-ci\",      \"value\": \"tfnsw-aai-dataplatform-prod\"    },    {      \"key\": \"ccoe:org:cost-code\",      \"value\": \"0000131039\"    }  ]}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 2034,
+                "common_patterns": {
+                    "alphanumeric": 742,
+                    "all_letters": 167
+                }
+            },
+            "x_discounts": {
+                "null_count": 0,
+                "distinct_count": 392,
+                "data_type": "object",
+                "sample_values": [
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":0.000000000000000e+00}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.050000000000000e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.050000000000000e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-2.100000000000000e-09},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-2.100000000000000e-09}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.936000000000000e-07},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.936000000000000e-07}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-9.680000000000001e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-9.680000000000001e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":0.000000000000000e+00}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":0.000000000000000e+00},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\"}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-9.680000000000001e-08},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-9.680000000000001e-08}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-5.500000000000000e-06},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-5.500000000000000e-06}]}",
+                    "{\"key_value\":[{\"key\":\"total_discount\",\"value\":-1.471712000000000e-04},{\"key\":\"bundled_discount\",\"value\":0.000000000000000e+00},{\"key\":\"edp_discount\",\"value\":-1.471712000000000e-04}]}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 150,
+                "max_length": 182,
+                "common_patterns": {
+                    "alphanumeric": 1000
+                }
+            },
+            "x_operation": {
+                "null_count": 0,
+                "distinct_count": 133,
+                "data_type": "object",
+                "sample_values": [
+                    "CreateVolume-Gp3",
+                    "ReadBucketReplication",
+                    "CreateFileSystem:ONTAP",
+                    "ReadBucketPublicAccessBlock",
+                    "ReadVersioningProps",
+                    "CreateVolume-Gp3",
+                    "POST",
+                    "ReadBucketReplication",
+                    "Choice",
+                    "PublicIP-In"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 1,
+                "max_length": 32,
+                "common_patterns": {
+                    "alphanumeric": 221,
+                    "all_letters": 691
+                }
+            },
+            "x_servicecode": {
+                "null_count": 0,
+                "distinct_count": 35,
+                "data_type": "object",
+                "sample_values": [
+                    "AmazonEC2",
+                    "AmazonS3",
+                    "AmazonFSx",
+                    "AmazonS3",
+                    "AmazonS3",
+                    "AmazonEC2",
+                    "AmazonCloudFront",
+                    "AmazonS3",
+                    "AmazonStates",
+                    "AmazonEC2"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 21,
+                "common_patterns": {
+                    "alphanumeric": 573,
+                    "all_letters": 427
+                }
+            },
+            "x_usagetype": {
+                "null_count": 0,
+                "distinct_count": 177,
+                "data_type": "object",
+                "sample_values": [
+                    "APS2-EBS:VolumeP-Throughput.gp3",
+                    "APS2-USE1-AWS-Out-Bytes",
+                    "APS2-BackupUsage",
+                    "APS2-Requests-Tier2",
+                    "APS2-Requests-Tier2",
+                    "APS2-EBS:VolumeP-IOPS.gp3",
+                    "EU-DataTransfer-Out-OBytes",
+                    "APS2-Requests-Tier2",
+                    "APS2-StateTransition",
+                    "APS2-DataTransfer-Regional-Bytes"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 45,
+                "common_patterns": {
+                    "alphanumeric": 983,
+                    "all_letters": 1
+                }
+            }
+        }
+    },
+    "azure_cost_usage": {
+        "table_name": "azure_cost_usage",
+        "row_count": 5000,
+        "columns": {
+            "billedcost": {
+                "null_count": 0,
+                "distinct_count": 2902,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.0,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695
+            },
+            "billingaccountid": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455",
+                    "/providers/Microsoft.Billing/billingAccounts/92487455"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 53,
+                "max_length": 53,
+                "common_patterns": {
+                    "alphanumeric": 5000
+                }
+            },
+            "billingaccountname": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ",
+                    "Genafcbeg sbe AFJ"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 17,
+                "max_length": 17,
+                "common_patterns": {}
+            },
+            "billingaccounttype": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account",
+                    "Billing Account"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 15,
+                "max_length": 15,
+                "common_patterns": {}
+            },
+            "billingcurrency": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD",
+                    "AUD"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 3,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "billingperiodend": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-08-01 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {}
+            },
+            "billingperiodstart": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000",
+                    "2025-07-01 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {}
+            },
+            "chargecategory": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage",
+                    "Usage"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 8,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "chargedescription": {
+                "null_count": 0,
+                "distinct_count": 381,
+                "data_type": "object",
+                "sample_values": [
+                    "Azure Monitor - Alerts System Log Monitored at 5 Minute Frequency",
+                    "Virtual Network Private Link - Standard Data Processed - Ingress",
+                    "Bandwidth Inter-Region - Inter Continent Data Transfer Out - OCEANIA To Any - Intercontinental",
+                    "General Block Blob v2 - Hot ZRS - Read Operations - AU East",
+                    "Files v2 - ZRS - Read Operations - AU East",
+                    "Virtual Network Peering - Intra-Region Egress",
+                    "Standard HDD Managed Disks - Snapshots - LRS - Snapshots - AU East",
+                    "Azure Data Factory v2 - Cloud - Data Movement",
+                    "Virtual Machines Dsv5 Series - D8s v5 - AU East",
+                    "Virtual Network Private Link - Standard Private Endpoint"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 109,
+                "common_patterns": {
+                    "alphanumeric": 1760,
+                    "all_letters": 5
+                }
+            },
+            "chargefrequency": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based",
+                    "Usage-Based"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 1
+                }
+            },
+            "chargeperiodend": {
+                "null_count": 0,
+                "distinct_count": 92,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-17 00:00:00.000",
+                    "2025-07-22 00:00:00.000",
+                    "2025-07-25 00:00:00.000",
+                    "2025-07-15 00:00:00.000",
+                    "2025-07-27 00:00:00.000",
+                    "2025-07-23 00:00:00.000",
+                    "2025-08-01 00:00:00.000",
+                    "2025-07-05 00:00:00.000",
+                    "2025-07-31 00:00:00.000",
+                    "2025-07-11 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {}
+            },
+            "chargeperiodstart": {
+                "null_count": 0,
+                "distinct_count": 92,
+                "data_type": "object",
+                "sample_values": [
+                    "2025-07-16 00:00:00.000",
+                    "2025-07-21 00:00:00.000",
+                    "2025-07-24 00:00:00.000",
+                    "2025-07-14 00:00:00.000",
+                    "2025-07-26 00:00:00.000",
+                    "2025-07-22 00:00:00.000",
+                    "2025-07-31 00:00:00.000",
+                    "2025-07-04 00:00:00.000",
+                    "2025-07-30 00:00:00.000",
+                    "2025-07-10 00:00:00.000"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 23,
+                "max_length": 23,
+                "common_patterns": {}
+            },
+            "commitmentdiscountcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Spend",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "commitmentdiscountid": {
+                "null_count": 0,
+                "distinct_count": 8,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "/providers/Microsoft.BillingBenefits/savingsPlanOrders/19ss585n-0rn4-9479-nr93-q3o8r0qn39s6/fnivatfCynaf/62q061qo-06oo-9rs7-367s-o5q6oqn6r9pr",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 141,
+                "common_patterns": {
+                    "all_letters": 4660,
+                    "alphanumeric": 340
+                }
+            },
+            "commitmentdiscountname": {
+                "null_count": 0,
+                "distinct_count": 8,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Compute_SavingsPlan_01-09-2023_16-00",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 36,
+                "common_patterns": {
+                    "all_letters": 4660,
+                    "alphanumeric": 340
+                }
+            },
+            "commitmentdiscountstatus": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Used",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 7,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "commitmentdiscounttype": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Unknown",
+                    "Savings Plan",
+                    "Unknown"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 4670
+                }
+            },
+            "consumedquantity": {
+                "null_count": 0,
+                "distinct_count": 2610,
+                "data_type": "float64",
+                "sample_values": [
+                    0.03125,
+                    0.010916251689196,
+                    4.007481039e-06,
+                    6.000000000000001,
+                    128.0,
+                    0.002129014581442,
+                    0.331824,
+                    0.066666666666667,
+                    0.66668,
+                    24.0
+                ],
+                "min_value": 0.0,
+                "max_value": 10751877.999999996
+            },
+            "consumedunit": {
+                "null_count": 0,
+                "distinct_count": 13,
+                "data_type": "object",
+                "sample_values": [
+                    "Units/Month",
+                    "GB",
+                    "GB",
+                    "Units",
+                    "Units",
+                    "GB",
+                    "GB/Month",
+                    "Hours",
+                    "Hours",
+                    "Hours"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 3657
+                }
+            },
+            "contractedcost": {
+                "null_count": 0,
+                "distinct_count": 3144,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.409136982576,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695
+            },
+            "contractedunitprice": {
+                "null_count": 0,
+                "distinct_count": 259,
+                "data_type": "float64",
+                "sample_values": [
+                    1.91754,
+                    0.0127635,
+                    0.10227885,
+                    0.00561795,
+                    0.00191754,
+                    0.012864,
+                    0.07035,
+                    0.31959,
+                    0.6136932,
+                    0.0127635
+                ],
+                "min_value": 0.0,
+                "max_value": 3985.3476
+            },
+            "effectivecost": {
+                "null_count": 0,
+                "distinct_count": 3141,
+                "data_type": "float64",
+                "sample_values": [
+                    0.059923125,
+                    0.000139329578435,
+                    4.09880552e-07,
+                    3.37077e-06,
+                    2.4544512e-05,
+                    2.7387643576e-05,
+                    0.0233438184,
+                    0.021306,
+                    0.24810596202,
+                    0.306324
+                ],
+                "min_value": 0.0,
+                "max_value": 992.32695
+            },
+            "invoiceissuername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "listcost": {
+                "null_count": 0,
+                "distinct_count": 3133,
+                "data_type": "float64",
+                "sample_values": [
+                    0.07015625,
+                    0.000163197962753,
+                    4.79815705e-07,
+                    3.948e-06,
+                    2.8736e-05,
+                    3.1935218722e-05,
+                    0.0273091152,
+                    0.024933333333333,
+                    0.478942912,
+                    0.3588
+                ],
+                "min_value": 0.0,
+                "max_value": 1161.63
+            },
+            "listunitprice": {
+                "null_count": 0,
+                "distinct_count": 249,
+                "data_type": "float64",
+                "sample_values": [
+                    2.245,
+                    0.01495,
+                    0.11973,
+                    0.00658,
+                    0.002245,
+                    0.015,
+                    0.0823,
+                    0.374,
+                    0.7184,
+                    0.01495
+                ],
+                "min_value": 0.0,
+                "max_value": 4664.88
+            },
+            "pricingcategory": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Standard",
+                    "Committed",
+                    "Standard"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "pricingquantity": {
+                "null_count": 0,
+                "distinct_count": 2481,
+                "data_type": "float64",
+                "sample_values": [
+                    0.03125,
+                    0.010916251689196,
+                    4.007481039e-06,
+                    0.0006,
+                    0.0128,
+                    0.002129014581442,
+                    0.331824,
+                    0.066666666666667,
+                    0.66668,
+                    24.0
+                ],
+                "min_value": 0.0,
+                "max_value": 64602.0
+            },
+            "pricingunit": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "Units/Month",
+                    "GB",
+                    "GB",
+                    "Units",
+                    "Units",
+                    "GB",
+                    "GB/Month",
+                    "Hours",
+                    "Hours",
+                    "Hours"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 3657
+                }
+            },
+            "providername": {
+                "null_count": 0,
+                "distinct_count": 1,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 9,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "publishername": {
+                "null_count": 0,
+                "distinct_count": 4,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 35,
+                "common_patterns": {
+                    "all_letters": 4996
+                }
+            },
+            "regionid": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "australiasoutheast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast",
+                    "australiaeast"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 18,
+                "common_patterns": {
+                    "all_letters": 4996,
+                    "alphanumeric": 4
+                }
+            },
+            "regionname": {
+                "null_count": 0,
+                "distinct_count": 12,
+                "data_type": "object",
+                "sample_values": [
+                    "Australia Southeast",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East",
+                    "Australia East"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 6,
+                "max_length": 19,
+                "common_patterns": {
+                    "all_letters": 257,
+                    "alphanumeric": 4
+                }
+            },
+            "resourceid": {
+                "null_count": 0,
+                "distinct_count": 3873,
+                "data_type": "object",
+                "sample_values": [
+                    "/subscriptions/624525qr-o262-97or-or9p-51n2s2qq46pp/resourcegroups/qkp-znvag-et/providers/microsoft.insights/scheduledqueryrules/qkp-znwbe-gbzpng-yvahk cebprff qbja",
+                    "/subscriptions/n38063sp-q7q6-9614-non5-s015p29qr98n/resourcegroups/qngnoevpxf-et-gquctf-acq-nccf-mbar-et/providers/microsoft.compute/virtualmachines/n05qro2rqn1699n7420433ssn1pqor77",
+                    "/subscriptions/p8p21058-os5s-992n-o806-8onqs69155r1/resourcegroups/znantrq-qfv-fcq-bqe-nqf-etc-556-qngnoevpxf/providers/microsoft.compute/virtualmachines/o334o18s3qs7998qnrn15p96q7s80629",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3/resourcegroups/znantrq-et-fre-qngn-pngnybt-abacebq/providers/microsoft.storage/storageaccounts/fpnanhfgenyvnrnfgithjbgt",
+                    "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292/resourcegroups/qfv-ffg-bqe-vbg-etc-556/providers/microsoft.storage/storageaccounts/fgffgvbgbhgchg556",
+                    "/subscriptions/0q33745o-549o-9p71-n3s7-7ns3q8rop551/resourcegroups/gqucef-acg-jro-mbar-et/providers/microsoft.compute/virtualmachines/efacgveriz57",
+                    "/subscriptions/n047s74n-39p1-91q2-o50s-0o399o1369q2/resourcegroups/et-vzntrf/providers/microsoft.compute/snapshots/freire7567e7-7576-58-64-nhfgenyvnrnfg-fanc",
+                    "/subscriptions/5q8nsqss-p8o5-935r-o8q2-1p1prnr9r75s/resourcegroups/et-flq-ceq-pne-qngn-znantrzrag/providers/microsoft.datafactory/factories/ebnqfnsrglnanylgvpf-qs-ceq",
+                    "/subscriptions/p9onon8p-9sp8-97pq-39s8-nq76998892n8/resourcegroups/et-niq-qrq-gsafj-ceq-56/providers/microsoft.compute/virtualmachines/fu-qrqcgsa-107",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3/resourcegroups/npgvirgenafcbeg-et-qri-557/providers/microsoft.network/privateendpoints/npgvirgenafqanqygfg56-crc"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 220,
+                "common_patterns": {
+                    "alphanumeric": 4999,
+                    "all_letters": 1
+                }
+            },
+            "resourcename": {
+                "null_count": 0,
+                "distinct_count": 3956,
+                "data_type": "object",
+                "sample_values": [
+                    "QKP-Znwbe-Gbzpng-Yvahk Cebprff Qbja",
+                    "n05qro2rqn1699n7420433ssn1pqor77",
+                    "o334o18s3qs7998qnrn15p96q7s80629",
+                    "fpnanhfgenyvnrnfgithjbgt",
+                    "fgffgvbgbhgchg556",
+                    "efacgveriz57",
+                    "Freire7567E7-7576-58-64-nhfgenyvnrnfg-fanc",
+                    "EBNQFNSRGLNANYLGVPF-QS-CEQ/57-QEVIRF-51-PHFGBZRE-615-GY-Y-F-R-BETNAVFNGVBA_HAVG",
+                    "FU-QRQCGSA-107",
+                    "npgvirgenafqanqygfg56-crc"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 88,
+                "common_patterns": {
+                    "alphanumeric": 3758,
+                    "all_letters": 739
+                }
+            },
+            "resourcetype": {
+                "null_count": 0,
+                "distinct_count": 74,
+                "data_type": "object",
+                "sample_values": [
+                    "Log search alert rule",
+                    "Virtual machine",
+                    "Virtual machine",
+                    "Storage account",
+                    "Storage account",
+                    "Virtual machine",
+                    "Snapshot",
+                    "Data Factory pipeline",
+                    "Virtual machine",
+                    "Private endpoint"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 70,
+                "common_patterns": {
+                    "all_letters": 567,
+                    "alphanumeric": 45
+                }
+            },
+            "servicecategory": {
+                "null_count": 0,
+                "distinct_count": 13,
+                "data_type": "object",
+                "sample_values": [
+                    "Management and Governance",
+                    "Compute",
+                    "Compute",
+                    "Storage",
+                    "Storage",
+                    "Compute",
+                    "Compute",
+                    "Other",
+                    "Compute",
+                    "Networking"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 4608
+                }
+            },
+            "servicename": {
+                "null_count": 0,
+                "distinct_count": 48,
+                "data_type": "object",
+                "sample_values": [
+                    "Azure Monitor",
+                    "Virtual Machines",
+                    "Virtual Machines",
+                    "Storage Accounts",
+                    "Storage Accounts",
+                    "Virtual Machines",
+                    "Virtual Machines",
+                    "Azure Data Factory v2",
+                    "Virtual Machines",
+                    "Azure Private Link"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 30,
+                "common_patterns": {
+                    "alphanumeric": 23,
+                    "all_letters": 17
+                }
+            },
+            "skuid": {
+                "null_count": 0,
+                "distinct_count": 380,
+                "data_type": "float64",
+                "sample_values": [
+                    1077087.0,
+                    611233439.0,
+                    616167951.0,
+                    1083328.0,
+                    1083429.0,
+                    1017022.0,
+                    1019518.0,
+                    1077829.0,
+                    616357551.0,
+                    611235125.0
+                ],
+                "min_value": 0.0,
+                "max_value": 616988881.0
+            },
+            "skupriceid": {
+                "null_count": 0,
+                "distinct_count": 380,
+                "data_type": "int64",
+                "sample_values": [
+                    1077087,
+                    611233439,
+                    616167951,
+                    1083328,
+                    1083429,
+                    1017022,
+                    1019518,
+                    1077829,
+                    616357551,
+                    611235125
+                ],
+                "min_value": -2.0,
+                "max_value": 616988881.0
+            },
+            "subaccountid": {
+                "null_count": 0,
+                "distinct_count": 151,
+                "data_type": "object",
+                "sample_values": [
+                    "/subscriptions/624525qr-o262-97or-or9p-51n2s2qq46pp",
+                    "/subscriptions/n38063sp-q7q6-9614-non5-s015p29qr98n",
+                    "/subscriptions/p8p21058-os5s-992n-o806-8onqs69155r1",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3",
+                    "/subscriptions/6nr30q48-ns0n-9212-4642-742296s2o292",
+                    "/subscriptions/0q33745o-549o-9p71-n3s7-7ns3q8rop551",
+                    "/subscriptions/n047s74n-39p1-91q2-o50s-0o399o1369q2",
+                    "/subscriptions/5q8nsqss-p8o5-935r-o8q2-1p1prnr9r75s",
+                    "/subscriptions/p9onon8p-9sp8-97pq-39s8-nq76998892n8",
+                    "/subscriptions/n6r3r1ss-4538-976n-4qq3-no3rq59p25p3"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 51,
+                "common_patterns": {
+                    "alphanumeric": 4998,
+                    "all_letters": 2
+                }
+            },
+            "subaccountname": {
+                "null_count": 0,
+                "distinct_count": 151,
+                "data_type": "object",
+                "sample_values": [
+                    "gsafj-zuf-nmherqkpztg-abacebq",
+                    "gsafj-rqnf-qngnuhotf-abacebq",
+                    "gsafj-qfv-bqer-cebq",
+                    "gsafj-rqnf-nanylgvpf-abacebq",
+                    "gsafj-qfv-bqer-abacebq",
+                    "gsafj-rqnf-qngnuhoef-abacebq",
+                    "gsafj-uf-nmherztzg-cebq",
+                    "gsafj-rqnf-nanylgvpf-cebq",
+                    "gsafj-rhf-niq-cebq",
+                    "gsafj-rqnf-nanylgvpf-abacebq"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 43,
+                "common_patterns": {
+                    "alphanumeric": 260,
+                    "all_letters": 2
+                }
+            },
+            "subaccounttype": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription",
+                    "Subscription"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 7,
+                "max_length": 12,
+                "common_patterns": {
+                    "all_letters": 5000
+                }
+            },
+            "tags": {
+                "null_count": 0,
+                "distinct_count": 583,
+                "data_type": "object",
+                "sample_values": [
+                    "{}",
+                    "{\n  \"application\": \"gquctfacqnqo56\",\n  \"cost_center\": \"6555674521\"\n}",
+                    "{\n  \"application\": \"gsafj-qfv-bqer-abacebq\",\n  \"environment\": \"Production\"\n}",
+                    "{\n  \"application\": \"\"\n}",
+                    "{\n  \"application\": \"gsafj-qfv-bqer-abacebq\",\n  \"cost_center\": \"\",\n  \"environment\": \"SIT\"\n}",
+                    "{\n  \"application\": \"efacgveriz57\"\n}",
+                    "{\n  \"application\": \"gsafj-uf-nmherztzg-cebq\",\n  \"cost_center\": \"5555679310\"\n}",
+                    "{\n  \"application\": \"596763\",\n  \"cost_center\": \"6555604585\",\n  \"environment\": \"Prod\"\n}",
+                    "{\n  \"application\": \"Nmher Iveghny Qrfxgbc (NIQ)\",\n  \"cost_center\": \"\",\n  \"environment\": \"Prod\"\n}",
+                    "{\n  \"application\": \"qrsnhyg\",\n  \"cost_center\": \"5555637666\",\n  \"environment\": \"Dev\"\n}"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 2,
+                "max_length": 114,
+                "common_patterns": {
+                    "alphanumeric": 2070,
+                    "all_letters": 98
+                }
+            }
+        }
+    }
+}

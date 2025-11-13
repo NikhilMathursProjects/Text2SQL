@@ -1,0 +1,178 @@
+{
+  "availabilityzone": {
+    "short_description": "Represents the AWS Availability Zone where a resource or service was consumed, indicating geographical and logical isolation.",
+    "long_description": "This column stores the specific AWS Availability Zone (e.g., 'us-east-1a') where a particular usage event occurred. It is of `object` (string) data type, with no null values across all 1000 rows. There are 5 distinct values, suggesting usage across a limited set of zones within a region. The lengths of the values range from 7 to 15 characters. The patterns indicate that 97.1% of values consist of `all_letters` (e.g., 'useast1a'), while 2.9% are `alphanumeric` (e.g., including numbers or hyphens). It is crucial for understanding the geographic distribution and high availability of resources."
+  },
+  "billedcost": {
+    "short_description": "The total cost billed for a specific AWS usage item, representing the actual monetary charge.",
+    "long_description": "This column stores the final monetary cost incurred for a particular line item of AWS usage. It is of `float64` data type, indicating decimal currency values, with no null values. There are 412 distinct values, showing a variety of charge amounts. The value range is from 0.0 to 9.13, suggesting individual line items typically represent small charges, possibly due to fine-grained reporting or a short billing period. It serves as a key metric for financial analysis and cost tracking."
+  },
+  "billingaccountid": {
+    "short_description": "Identifies the unique AWS billing account responsible for the charges.",
+    "long_description": "This column holds the unique identifier for the AWS billing account to which the cost and usage are attributed. It is of `float64` data type, likely representing a large integer ID that Pandas interprets as a float, with no null values. There is only 1 distinct value (428183000000.0), indicating that all records in this dataset belong to a single AWS master billing account."
+  },
+  "billingaccountname": {
+    "short_description": "The human-readable name of the AWS billing account.",
+    "long_description": "This column provides the descriptive name associated with the AWS billing account ID. It is of `object` (string) data type, with no null values. There is only 1 distinct value, consistent with a single billing account. All values have a consistent length of 25 characters and are `alphanumeric`, suggesting a standardized naming convention for the billing account."
+  },
+  "billingcurrency": {
+    "short_description": "Specifies the currency used for billing purposes in the AWS account.",
+    "long_description": "This column indicates the currency in which all costs are billed. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 3 characters. All values consist of `all_letters`, which strongly suggests a standard 3-letter currency code, most commonly 'USD' in AWS contexts."
+  },
+  "billingperiodend": {
+    "short_description": "The end date of the AWS billing period to which the usage charge belongs.",
+    "long_description": "This column specifies the end date of the overall billing period for the charges recorded. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 7 characters. This format commonly represents 'YYYY-MM' (e.g., '2023-01') or 'YYYYMMD' in AWS Cost and Usage Reports, implying all records are from the same monthly or specific billing period."
+  },
+  "billingperiodstart": {
+    "short_description": "The start date of the AWS billing period for the usage charges.",
+    "long_description": "This column indicates the start date of the overall billing period for the AWS usage. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 7 characters. Similar to `billingperiodend`, this likely represents a 'YYYY-MM' or 'YYYYMMD' format, confirming that all data points belong to the same specific billing period, useful for time-series analysis."
+  },
+  "chargecategory": {
+    "short_description": "Classifies the type of charge, such as 'Usage' or 'Tax'.",
+    "long_description": "This column categorizes the nature of the charge. It is of `object` (string) data type, with no null values. There are 2 distinct values, suggesting a primary charge type (e.g., 'Usage') and possibly a secondary one (e.g., 'Credit' or 'Tax'). Lengths range from 3 to 5 characters, and all values consist of `all_letters`, indicating simple categorical labels."
+  },
+  "chargedescription": {
+    "short_description": "Provides a detailed textual description of the specific charge item.",
+    "long_description": "This column offers a granular, human-readable description of what the charge pertains to. It is of `object` (string) data type, with no null values. There are 169 distinct values, reflecting the wide variety of services and operations billed. Lengths range significantly from 16 to 101 characters, providing ample space for detailed explanations. Most values (98%) are `alphanumeric`, which is expected for descriptive text that might include numbers, service names, and version identifiers."
+  },
+  "chargefrequency": {
+    "short_description": "Indicates how often the charge is applied (e.g., 'Hourly', 'Monthly').",
+    "long_description": "This column specifies the frequency at which the charge is calculated or applied. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 11 characters. This suggests a uniform frequency for all records in this dataset, likely something like 'OnDemand' or 'Hourly'."
+  },
+  "chargeperiodend": {
+    "short_description": "The end date of the specific time period for which this particular charge applies.",
+    "long_description": "This column marks the end of the specific time interval during which the reported usage for this charge occurred. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 7 characters, similar to `billingperiodend`. This implies all individual charges within this dataset relate to the same specific usage period end date, useful for micro-level time analysis."
+  },
+  "chargeperiodstart": {
+    "short_description": "The start date of the specific time period for which this particular charge applies.",
+    "long_description": "This column marks the beginning of the specific time interval during which the reported usage for this charge occurred. It is of `object` (string) data type, with no null values. There is only 1 distinct value, and its length is consistently 7 characters, similar to `billingperiodstart`. This implies all charges in the dataset relate to the same specific usage period start date, useful for understanding the fine-grained time scope of the cost."
+  },
+  "commitmentdiscountcategory": {
+    "short_description": "Classifies the type of commitment discount applied to the charge, such as 'Savings Plan'.",
+    "long_description": "This column specifies the category of the commitment discount that may have been applied to the usage. It is of `object` (string) data type, with no null values. There are 2 distinct values. Lengths range from 5 to 7 characters, and all values consist of `all_letters`. Common values might be 'OnDemand' (no commitment) and 'SP' (Savings Plan) or 'RI' (Reserved Instance), helping to identify if cost savings are due to long-term commitments."
+  },
+  "commitmentdiscountid": {
+    "short_description": "A unique identifier for the specific commitment discount applied.",
+    "long_description": "This column provides a unique ID for the particular commitment discount instrument (e.g., a specific Savings Plan ARN). It is of `object` (string) data type, with no null values. There are 3 distinct values. Lengths range widely from 7 to 83 characters. The patterns show 97.6% of values consist of `all_letters`, while 2.4% are `alphanumeric`, suggesting a mix of standardized codes and potentially longer Amazon Resource Name (ARN) formats for specific commitments."
+  },
+  "commitmentdiscountstatus": {
+    "short_description": "Indicates the status of the commitment discount applied to the charge (e.g., 'Applied', 'Not Applied').",
+    "long_description": "This column describes whether a commitment discount was successfully applied to the usage line item. It is of `object` (string) data type, with no null values. There are 2 distinct values. Lengths range from 4 to 7 characters, and all values consist of `all_letters`. Possible values are likely 'Applied' and 'None' or 'NoMatch', which helps determine the effective application of cost optimization strategies."
+  },
+  "commitmentdiscounttype": {
+    "short_description": "Specifies the type of commitment discount mechanism (e.g., 'Savings Plan', 'Reserved Instance').",
+    "long_description": "This column identifies the broad type of commitment discount program used. It is of `object` (string) data type, with no null values. There are 2 distinct values. Lengths range from 7 to 12 characters. 97.6% of values consist of `all_letters`, with some potentially being `alphanumeric` if they include version numbers or specific identifiers. Common values include 'SavingsPlan' or 'ReservedInstance', indicating the cost optimization strategy in use."
+  },
+  "consumedquantity": {
+    "short_description": "The amount of the resource consumed during the charge period.",
+    "long_description": "This column represents the measured quantity of the AWS resource or service utilized. It is of `float64` data type, allowing for fractional consumption, with no null values. There are 463 distinct values, indicating varied usage levels. The value range is from 0.0 to 299392.0, showing a wide spectrum of consumption, from very little to significant amounts. This is a primary metric for understanding resource utilization."
+  },
+  "consumedunit": {
+    "short_description": "The unit of measurement for the `consumedquantity` (e.g., 'Hours', 'GB').",
+    "long_description": "This column describes the unit in which the `consumedquantity` is measured. It is of `object` (string) data type, with no null values. There are 33 distinct values, reflecting the diverse units used across various AWS services (e.g., 'Hours', 'GB', 'Requests'). Lengths range from 2 to 24 characters. Most values (59.7%) consist of `all_letters`, but some (0.3%) are `alphanumeric`, which might indicate units with numerical components or specific service abbreviations."
+  },
+  "contractedcost": {
+    "short_description": "The cost of the usage based on negotiated or discounted contract rates.",
+    "long_description": "This column represents the cost calculated after applying any specific contract or negotiated pricing. It is of `float64` data type, with no null values. There are 433 distinct values. The value range is from 0.0 to 9.13, similar to `billedcost`, suggesting that `contractedcost` might be the direct basis for the `billedcost` or reflect the same line-item granularity. This is important for tracking actual cost savings from enterprise agreements."
+  },
+  "contractedunitprice": {
+    "short_description": "The unit price of the resource after applying negotiated contract rates.",
+    "long_description": "This column indicates the price per unit of consumption (e.g., per hour, per GB) according to any negotiated contracts. It is of `float64` data type, with no null values. There are 263 distinct values. The value range is from 0.0 to 38.33856468, showing varied unit pricing based on different services and contract terms. This is a key component in calculating `contractedcost` when multiplied by `consumedquantity`."
+  },
+  "effectivecost": {
+    "short_description": "The actual cost of the usage after all discounts and credits have been applied.",
+    "long_description": "This column reflects the final, effective cost of the usage item, incorporating all applicable discounts, credits, and pricing adjustments. It is of `float64` data type, with no null values. There are 435 distinct values. The value range is from 0.0 to 9.13, closely mirroring `billedcost` and `contractedcost`, indicating it's the ultimate cost figure for the line item. This is often the most important cost metric for financial reporting."
+  },
+  "invoiceissuername": {
+    "short_description": "The name of the entity that issued the invoice.",
+    "long_description": "This column identifies the specific organization or entity responsible for issuing the AWS invoice. It is of `object` (string) data type, with no null values. There is only 1 distinct value, with a consistent length of 37 characters. This suggests a single, official AWS invoicing entity (e.g., 'Amazon Web Services, Inc.' or a regional subsidiary)."
+  },
+  "listcost": {
+    "short_description": "The cost of the usage item at its standard, undiscounted public list price.",
+    "long_description": "This column represents the cost of the usage calculated using the standard AWS public list prices, before any discounts, negotiated rates, or commitments are applied. It is of `float64` data type, with no null values. There are 427 distinct values. The value range is from 0.0 to 9.13, similar to other cost columns, but represents the baseline price. Comparing this to `effectivecost` helps quantify the impact of discounts and commitments."
+  },
+  "listunitprice": {
+    "short_description": "The unit price of the resource at its standard public list rate.",
+    "long_description": "This column specifies the price per unit of consumption (e.g., per hour, per GB) based on AWS's standard public pricing. It is of `float64` data type, with no null values. There are 85 distinct values. The value range is from 0.0 to 49.152, representing the undiscounted unit rate for various services. This value, multiplied by `consumedquantity`, yields `listcost`."
+  },
+  "pricingcategory": {
+    "short_description": "Categorizes the pricing model applied to the resource, such as 'OnDemand' or 'Spot'.",
+    "long_description": "This column describes the pricing model or category under which the resource was utilized and charged. It is of `object` (string) data type, with no null values. There are 3 distinct values. Lengths range from 7 to 9 characters, and all values consist of `all_letters`. Common values include 'OnDemand', 'SavingsPlan', or 'Spot', indicating how the cost was determined."
+  },
+  "pricingquantity": {
+    "short_description": "The quantity used for pricing calculations, which may differ from `consumedquantity` due to rounding or minimums.",
+    "long_description": "This column represents the quantity of usage that was actually used as the basis for calculating the charge. It is of `float64` data type, with no null values. There are 463 distinct values, identical to `consumedquantity`. The value range is from 0.0 to 299392.0, also identical to `consumedquantity`. While often matching `consumedquantity`, it can differ in scenarios like minimum charges or specific billing increments."
+  },
+  "pricingunit": {
+    "short_description": "The unit of measurement used for pricing calculations.",
+    "long_description": "This column defines the unit of measure used when applying prices to the usage quantity. It is of `object` (string) data type, with no null values. There are 33 distinct values, matching the number of distinct values in `consumedunit`. Lengths range from 2 to 24 characters. Similar to `consumedunit`, most values (59.7%) consist of `all_letters`, and a few (0.3%) are `alphanumeric`. This unit should align with the `listunitprice` and `contractedunitprice`."
+  },
+  "providername": {
+    "short_description": "The name of the cloud service provider, which is consistently AWS in this dataset.",
+    "long_description": "This column identifies the cloud service provider for the usage. It is of `object` (string) data type, with no null values. There is only 1 distinct value. The length is consistently 3 characters, and all values consist of `all_letters`, strongly suggesting 'AWS' for all records in this table."
+  },
+  "publishername": {
+    "short_description": "The name of the publisher of the service, typically Amazon Web Services.",
+    "long_description": "This column specifies the name of the entity that publishes the AWS service being consumed. It is of `object` (string) data type, with no null values. There is only 1 distinct value, with a consistent length of 37 characters, matching `invoiceissuername`. This likely refers to 'Amazon Web Services, Inc.' or a similar official name."
+  },
+  "regionid": {
+    "short_description": "A unique identifier for the AWS region where the resource is located.",
+    "long_description": "This column provides the programmatic identifier for the AWS region (e.g., 'us-east-1'). It is of `object` (string) data type, with no null values. There are 19 distinct values, indicating usage across multiple AWS regions. Lengths range from 6 to 14 characters. Most values (98.6%) are `alphanumeric`, with a small portion (1.4%) being `all_letters`. This ID is typically used for scripting and API interactions."
+  },
+  "regionname": {
+    "short_description": "The human-readable name of the AWS region.",
+    "long_description": "This column provides the descriptive name of the AWS region (e.g., 'US East (N. Virginia)'). It is of `object` (string) data type, with no null values. There are 26 distinct values, suggesting a broader set of region names compared to `regionid`, possibly due to variations in naming or inclusion of global regions. Lengths range from 3 to 25 characters. Only a small fraction (5.7%) consist of `all_letters`, meaning most include spaces, parentheses, and other characters, typical for display names."
+  },
+  "resourceid": {
+    "short_description": "The unique identifier for the specific AWS resource that incurred the charge.",
+    "long_description": "This column contains the unique ID of the individual AWS resource (e.g., EC2 instance ID, S3 bucket name, RDS instance ARN) that generated the usage. It is of `object` (string) data type, with no null values. There are 717 distinct values, indicating a very high cardinality and a large number of individual resources being tracked. Lengths range widely from 5 to 63 characters. Most values (85.1%) are `alphanumeric`, as resource IDs often contain letters, numbers, and hyphens, while some (7.2%) are `all_letters`. This is crucial for pinpointing costs to specific assets."
+  },
+  "resourcetype": {
+    "short_description": "Categorizes the type of AWS resource (e.g., 'EC2 Instance', 'S3 Bucket').",
+    "long_description": "This column describes the general type of AWS resource consuming costs. It is of `object` (string) data type, with no null values. There are 5 distinct values, indicating a limited set of resource types in this dataset. Lengths range from 6 to 12 characters, and all values consist of `all_letters`. Examples might include 'Instance', 'Volume', 'Snapshot', or 'Bucket'."
+  },
+  "servicecategory": {
+    "short_description": "A broad classification of the AWS service, like 'Compute' or 'Storage'.",
+    "long_description": "This column provides a high-level categorization of the AWS service. It is of `object` (string) data type, with no null values. There are 10 distinct values, reflecting different service categories. Lengths range from 7 to 25 characters. Most values (93.7%) consist of `all_letters`, suggesting descriptive category names (e.g., 'Compute', 'Storage', 'Networking')."
+  },
+  "servicename": {
+    "short_description": "The specific name of the AWS service being used (e.g., 'Amazon EC2', 'Amazon S3').",
+    "long_description": "This column identifies the particular AWS service that generated the charge. It is of `object` (string) data type, with no null values. There are 35 distinct values, showing a variety of AWS services being utilized. Lengths range from 7 to 35 characters. Only a small fraction (4.1%) consist of `all_letters`, while 1% are `alphanumeric`, implying that most service names contain spaces or other special characters (e.g., 'Amazon Elastic Compute Cloud', 'Amazon S3'). This is a key column for service-level cost breakdowns."
+  },
+  "skuid": {
+    "short_description": "A unique identifier for the specific SKU (Stock Keeping Unit) associated with the AWS service and usage type.",
+    "long_description": "This column represents the unique identifier for the AWS product SKU that corresponds to the specific service, instance type, region, and usage attributes. It is of `object` (string) data type, with no null values. There are 187 distinct values, reflecting the numerous combinations of AWS services and their specific pricing configurations. Lengths range from 7 to 16 characters. Most values (98.9%) are `alphanumeric`, with a small portion (1.1%) being `all_letters`, typical for AWS SKU IDs."
+  },
+  "skupriceid": {
+    "short_description": "A unique identifier for the specific pricing offer associated with a SKU.",
+    "long_description": "This column provides a unique ID for the specific pricing offer that applies to a given SKU. It is of `object` (string) data type, with no null values. There are 191 distinct values, slightly more than `skuid`, indicating that some SKUs might have multiple pricing offers. Lengths range from 7 to 38 characters. Nearly all values (99.9%) are `alphanumeric`, with only 0.1% being `all_letters`, which is common for pricing offer IDs in AWS."
+  },
+  "subaccountid": {
+    "short_description": "The unique identifier for the AWS sub-account (linked account) within the billing account that incurred the cost.",
+    "long_description": "This column holds the unique ID for the AWS linked account that is part of the overall billing account structure and is responsible for the usage. It is of `float64` data type, which suggests large integer IDs possibly represented as floats, with no null values. There are 171 distinct values, indicating that costs are distributed across many sub-accounts. The value range is from 12141219082.0 to 996430000000.0, showing a wide range of account numbers. This is critical for cost allocation to different departments or projects."
+  },
+  "subaccountname": {
+    "short_description": "The human-readable name of the AWS sub-account.",
+    "long_description": "This column provides the descriptive name associated with the `subaccountid`. It is of `object` (string) data type, with no null values. There are 173 distinct values, slightly more than `subaccountid`, which could mean some accounts share names, or there's a slight discrepancy in distinct counts. Lengths range from 14 to 38 characters. Only 4.6% are `alphanumeric`, suggesting that most subaccount names include spaces, special characters, or are purely alphabetical, common for descriptive team or project names."
+  },
+  "tags": {
+    "short_description": "A JSON string or key-value pair representation of user-defined tags applied to the resource.",
+    "long_description": "This column stores user-defined metadata (tags) associated with the AWS resource, typically as a JSON string or a structured key-value pair format. It is of `object` (string) data type, with no null values. There are 540 distinct values, showing a high degree of variation in tagging practices across resources. Lengths range significantly from 7 to 2034 characters, indicating that some resources have many tags or tags with long values. Most values (74.2%) are `alphanumeric`, with some (16.7%) being `all_letters`, which is expected for structured data that includes tag keys and values. This column is vital for advanced cost allocation and resource management."
+  },
+  "x_discounts": {
+    "short_description": "This column likely contains information about various discounts applied, possibly in a structured format.",
+    "long_description": "This column, prefixed with 'x_', suggests it might be an internal or custom field, potentially containing detailed information about applied discounts. It is of `object` (string) data type, with no null values. There are 392 distinct values. Lengths are fairly consistent, ranging from 150 to 182 characters, and all values are `alphanumeric`. This consistent length and alphanumeric pattern suggest a fixed-format string or a serialized object representing discount details, possibly including IDs, amounts, or types of discounts."
+  },
+  "x_operation": {
+    "short_description": "Describes the specific operation or action performed by the AWS service that incurred the charge.",
+    "long_description": "This column, prefixed with 'x_', typically specifies the particular operation within an AWS service that consumed resources (e.g., 'RunInstances', 'GetObject'). It is of `object` (string) data type, with no null values. There are 133 distinct values, indicating a wide variety of operations. Lengths range from 1 to 32 characters, accommodating short codes to more descriptive actions. A significant portion (69.1%) consists of `all_letters`, while 22.1% are `alphanumeric`, which is consistent with operation names that can be simple words or include version numbers/identifiers."
+  },
+  "x_servicecode": {
+    "short_description": "A short, internal code for the AWS service, often used in pricing APIs.",
+    "long_description": "This column, prefixed with 'x_', represents a short, internal code identifying the AWS service (e.g., 'AmazonEC2', 'AmazonS3'). It is of `object` (string) data type, with no null values. There are 35 distinct values, matching the number of distinct `servicename` values, suggesting a one-to-one mapping. Lengths range from 6 to 21 characters. Values are split between `alphanumeric` (57.3%) and `all_letters` (42.7%), which is typical for service codes that sometimes include numbers or are purely textual."
+  },
+  "x_usagetype": {
+    "short_description": "Describes the specific type of usage for a resource, such as 'DataTransfer-Out' or 'EU-DataProcessing'.",
+    "long_description": "This column, prefixed with 'x_', details the specific pattern or characteristic of resource usage. It is of `object` (string) data type, with no null values. There are 177 distinct values, highlighting the granularity of usage types AWS tracks. Lengths range from 7 to 45 characters, allowing for detailed descriptions. Most values (98.3%) are `alphanumeric`, with only 0.1% being `all_letters`, which is very common for usage types that often combine service identifiers, region codes, and resource characteristics."
+  }
+}

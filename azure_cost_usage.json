@@ -1,0 +1,174 @@
+{
+  "billedcost": {
+    "short_description": "This column represents the final cost incurred for a specific Azure usage item after all discounts and adjustments are applied.",
+    "long_description": "`billedcost` is a `float64` representing the monetary cost. Values range from 0.0 to 992.32695, indicating that costs are typically in a common currency and can include fractional cents. There are 2902 distinct values across 5000 rows, suggesting a wide variety of individual billing items. All values are non-null and this is a crucial metric for understanding the actual financial expenditure."
+  },
+  "billingaccountid": {
+    "short_description": "This column identifies the unique ID of the Azure billing account to which the cost is attributed.",
+    "long_description": "`billingaccountid` is an `object` (string) representing a unique identifier for the billing account. It has a constant length of 53 characters and consists entirely of alphanumeric characters across all 5000 rows. With only 1 distinct value, it implies all records belong to a single billing account. This ID links usage data to a specific contractual billing entity."
+  },
+  "billingaccountname": {
+    "short_description": "This column provides the human-readable name of the Azure billing account.",
+    "long_description": "`billingaccountname` is an `object` (string) column storing the descriptive name of the billing account. It has a fixed length of 17 characters. Like `billingaccountid`, it has only 1 distinct value, indicating a single billing account is represented in this dataset. This column is useful for reporting and identification purposes, often alongside the ID."
+  },
+  "billingaccounttype": {
+    "short_description": "This column indicates the type of the Azure billing account.",
+    "long_description": "`billingaccounttype` is an `object` (string) representing the classification of the billing account. It has a fixed length of 15 characters. With only 1 distinct value, it suggests a uniform billing account type across all records in this dataset. Examples could be 'EnterpriseAgreement' or 'MicrosoftCustomerAgreement', providing context to the billing structure."
+  },
+  "billingcurrency": {
+    "short_description": "This column specifies the currency in which the costs are billed.",
+    "long_description": "`billingcurrency` is an `object` (string) representing the three-letter ISO 4217 currency code. It has a fixed length of 3 characters and consists entirely of letters. With only 1 distinct value, it signifies that all costs in this dataset are billed in the same currency (e.g., 'USD', 'EUR'). This is essential for financial reconciliation and interpretation of monetary values."
+  },
+  "billingperiodend": {
+    "short_description": "This column marks the end date and time of the billing period for the cost entry.",
+    "long_description": "`billingperiodend` is an `object` (string) column storing the end timestamp of the billing period. It has a fixed length of 23 characters, suggesting a consistent datetime format (e.g., ISO 8601 with timezone information). There are 3 distinct values, indicating that the data spans a few specific billing periods. It's crucial for filtering and aggregating costs by billing cycle."
+  },
+  "billingperiodstart": {
+    "short_description": "This column marks the start date and time of the billing period for the cost entry.",
+    "long_description": "`billingperiodstart` is an `object` (string) column storing the start timestamp of the billing period. Similar to `billingperiodend`, it has a fixed length of 23 characters, implying a consistent datetime format. There are 3 distinct values, corresponding to the start dates of the billing periods covered by the dataset. This column, along with `billingperiodend`, defines the scope of the billing cycle."
+  },
+  "chargecategory": {
+    "short_description": "This column categorizes the type of charge applied, such as 'Usage' or 'Tax'.",
+    "long_description": "`chargecategory` is an `object` (string) representing the high-level classification of the charge. It has 2 distinct values and lengths between 5 to 8 characters, consisting entirely of letters. Common values include 'Usage' for service consumption and 'Tax' for related levies. This column helps to differentiate between core service usage costs and other types of charges or adjustments."
+  },
+  "chargedescription": {
+    "short_description": "This column provides a detailed textual description of the specific charge item.",
+    "long_description": "`chargedescription` is an `object` (string) offering a granular explanation of the charge. It has 381 distinct values and lengths ranging from 7 to 109 characters. The patterns indicate a mix of alphanumeric and all-letters descriptions, which is typical for descriptive text of services or items. This column is vital for understanding what specific service or item each cost entry pertains to."
+  },
+  "chargefrequency": {
+    "short_description": "This column indicates how often the charge is applied (e.g., 'Recurring', 'OneTime').",
+    "long_description": "`chargefrequency` is an `object` (string) column describing the recurrence of the charge. It has 2 distinct values and lengths between 9 to 11 characters. While primarily 'all_letters' for most entries, it indicates a categorical nature. Common values would be 'Recurring' or 'OneTime'. This helps in analyzing predictable versus sporadic costs."
+  },
+  "chargeperiodend": {
+    "short_description": "This column indicates the end date and time of the period during which the specific charge was incurred.",
+    "long_description": "`chargeperiodend` is an `object` (string) storing the end timestamp for the actual usage or charge period. It has a fixed length of 23 characters, implying a consistent datetime format. With 92 distinct values, it suggests that individual charge items can have varying and specific end dates, reflecting daily or monthly usage aggregation. This is more granular than `billingperiodend` and details the consumption window."
+  },
+  "chargeperiodstart": {
+    "short_description": "This column indicates the start date and time of the period during which the specific charge was incurred.",
+    "long_description": "`chargeperiodstart` is an `object` (string) storing the start timestamp for the actual usage or charge period. Similar to `chargeperiodend`, it has a fixed length of 23 characters. With 92 distinct values, it reflects the specific start dates for individual usage events or charge periods. This column, paired with `chargeperiodend`, defines the precise window of service consumption for a given charge item."
+  },
+  "commitmentdiscountcategory": {
+    "short_description": "This column categorizes the type of discount applied due to a commitment (e.g., a Reserved Instance).",
+    "long_description": "`commitmentdiscountcategory` is an `object` (string) describing the classification of the commitment-based discount. It has 3 distinct values and lengths between 5 to 7 characters, consisting entirely of letters. Examples might include 'RI' (Reserved Instance), 'SavingsPlan', or 'Spot'. This helps understand the financial benefits derived from long-term commitments."
+  },
+  "commitmentdiscountid": {
+    "short_description": "This column provides a unique identifier for the specific commitment discount applied.",
+    "long_description": "`commitmentdiscountid` is an `object` (string) representing a unique ID for the commitment discount. It has 8 distinct values and lengths ranging from 7 to 141 characters, with most being all-letters and some alphanumeric. This ID allows for tracking and managing individual discount agreements or reserved instances, linking back to the specific commitment that provided the discount."
+  },
+  "commitmentdiscountname": {
+    "short_description": "This column provides a human-readable name for the specific commitment discount applied.",
+    "long_description": "`commitmentdiscountname` is an `object` (string) offering a descriptive name for the commitment discount. It has 8 distinct values and lengths ranging from 7 to 36 characters, with most being all-letters and some alphanumeric. This name helps in identifying and understanding the context of the applied discount without needing to decipher the ID, making reports more readable."
+  },
+  "commitmentdiscountstatus": {
+    "short_description": "This column indicates the current status of the commitment discount.",
+    "long_description": "`commitmentdiscountstatus` is an `object` (string) describing the operational state of the discount. It has 3 distinct values and lengths between 4 to 7 characters, consisting entirely of letters. Possible values could be 'Active', 'Expired', or 'Cancelled'. This status is important for validating the applicability of discounts and understanding the lifecycle of commitments."
+  },
+  "commitmentdiscounttype": {
+    "short_description": "This column specifies the broad type of the commitment discount (e.g., ReservedInstance, SavingsPlan).",
+    "long_description": "`commitmentdiscounttype` is an `object` (string) detailing the kind of commitment discount. It has 3 distinct values and lengths between 7 to 12 characters, with most being all-letters. This helps in classifying discounts by their underlying mechanism, such as 'ReservedInstance' or 'SavingsPlan', which is useful for financial planning and optimization."
+  },
+  "consumedquantity": {
+    "short_description": "This column represents the amount of the resource that was consumed during the charge period.",
+    "long_description": "`consumedquantity` is a `float64` representing the numerical quantity of the resource used. Values range from 0.0 to 10751877.999999996, indicating potentially very large quantities of consumption. There are 2610 distinct values, reflecting diverse consumption levels. This is a key metric for understanding resource utilization and forms the basis for calculating usage costs."
+  },
+  "consumedunit": {
+    "short_description": "This column specifies the unit of measurement for the `consumedquantity`.",
+    "long_description": "`consumedunit` is an `object` (string) representing the unit in which the `consumedquantity` is measured (e.g., 'Hours', 'GB', 'Transactions'). It has 13 distinct values and lengths ranging from 2 to 11 characters, with many being all-letters. This unit is critical for interpreting the `consumedquantity` value correctly and understanding what is being measured."
+  },
+  "contractedcost": {
+    "short_description": "This column represents the cost of the usage item based on agreed-upon contractual rates before any final adjustments like taxes or credits.",
+    "long_description": "`contractedcost` is a `float64` representing the cost derived from contractual pricing. Values range from 0.0 to 992.32695, indicating a monetary value. With 3144 distinct values, it shows a wide distribution of contracted prices. It is similar to `billedcost` but might represent an earlier stage of calculation, potentially before all final discounts or adjustments are applied."
+  },
+  "contractedunitprice": {
+    "short_description": "This column indicates the unit price for the resource as per the contractual agreement.",
+    "long_description": "`contractedunitprice` is a `float64` representing the price per unit of the resource based on the contract. Values range from 0.0 to 3985.3476. It has 259 distinct values, reflecting different contracted rates for various services or SKUs. This value, when multiplied by `consumedquantity` (or `pricingquantity`), typically leads to `contractedcost`."
+  },
+  "effectivecost": {
+    "short_description": "This column represents the final effective cost, often identical to `billedcost` or including very late-stage adjustments.",
+    "long_description": "`effectivecost` is a `float64` representing the final cost after all applicable pricing rules, discounts, and adjustments have been considered. Values range from 0.0 to 992.32695. With 3141 distinct values, it is very similar in range and distinctness to `billedcost` and `contractedcost`, suggesting it's another measure of the final financial impact. It's often the ultimate cost reported for an item."
+  },
+  "invoiceissuername": {
+    "short_description": "This column identifies the name of the entity that issued the invoice.",
+    "long_description": "`invoiceissuername` is an `object` (string) column storing the name of the invoicing entity. It has a fixed length of 9 characters and consists entirely of letters. With only 1 distinct value (e.g., 'Microsoft'), it indicates a single issuer for all invoices in the dataset. This helps confirm the source and authority of the billing information."
+  },
+  "listcost": {
+    "short_description": "This column represents the cost of the usage item at its public, undiscounted list price.",
+    "long_description": "`listcost` is a `float64` representing the cost of the resource item based on its public, retail price before any discounts, commitments, or specific contract rates are applied. Values range from 0.0 to 1161.63. With 3133 distinct values, it provides a baseline for evaluating the savings achieved through various pricing mechanisms by comparing against actual billed costs."
+  },
+  "listunitprice": {
+    "short_description": "This column indicates the public, undiscounted unit price for the resource.",
+    "long_description": "`listunitprice` is a `float64` representing the public, standard unit price of the resource. Values range from 0.0 to 4664.88. It has 249 distinct values, reflecting the variety of standard pricing for different services and SKUs. This is the base price from which `listcost` is calculated by multiplying with `pricingquantity`."
+  },
+  "pricingcategory": {
+    "short_description": "This column broadly categorizes the pricing model or tier applied to the resource.",
+    "long_description": "`pricingcategory` is an `object` (string) column indicating the general classification of the pricing. It has 3 distinct values and lengths between 7 to 9 characters, consisting entirely of letters. Examples could include 'Standard', 'Enterprise', or 'Developer'. This helps understand the pricing tier under which the services are being billed."
+  },
+  "pricingquantity": {
+    "short_description": "This column represents the quantity of the resource used for pricing calculations.",
+    "long_description": "`pricingquantity` is a `float64` representing the quantity used as the basis for calculating the price. Values range from 0.0 to 64602.0. With 2481 distinct values, it shows diverse quantities. This quantity might sometimes differ slightly from `consumedquantity` due to pricing model specifics (e.g., minimum billable units, tiered pricing) and is the multiplier for `listunitprice` to get `listcost`."
+  },
+  "pricingunit": {
+    "short_description": "This column specifies the unit of measurement used for pricing calculations.",
+    "long_description": "`pricingunit` is an `object` (string) representing the unit in which the `pricingquantity` is measured. It has 12 distinct values and lengths ranging from 2 to 11 characters, with many being all-letters. This unit is essential for correctly interpreting `pricingquantity` and understanding the rate structure. It is often the same as `consumedunit` but can sometimes differ due to rounding or billing logic."
+  },
+  "providername": {
+    "short_description": "This column identifies the name of the cloud service provider.",
+    "long_description": "`providername` is an `object` (string) column storing the name of the cloud provider. It has a fixed length of 9 characters and consists entirely of letters. With only 1 distinct value (e.g., 'Microsoft'), it confirms that all data pertains to a single cloud provider, Azure, which is consistent with the table name 'azure_cost_usage'."
+  },
+  "publishername": {
+    "short_description": "This column indicates the name of the entity that publishes the marketplace offering or service.",
+    "long_description": "`publishername` is an `object` (string) column identifying the publisher of the service or product. It has 4 distinct values and lengths ranging from 7 to 35 characters, with most entries being all-letters. This is important for tracking costs related to first-party Azure services versus third-party offerings on the Azure marketplace."
+  },
+  "regionid": {
+    "short_description": "This column provides a technical identifier for the Azure geographical region where the resource is deployed.",
+    "long_description": "`regionid` is an `object` (string) column representing the unique identifier for the Azure region. It has 12 distinct values and lengths ranging from 6 to 18 characters, with most being all-letters and a few alphanumeric. This ID is used for programmatic identification of the data center location and for precise geo-location of resources."
+  },
+  "regionname": {
+    "short_description": "This column provides the human-readable name of the Azure geographical region where the resource is deployed.",
+    "long_description": "`regionname` is an `object` (string) column providing the descriptive name of the Azure region. It has 12 distinct values and lengths ranging from 6 to 19 characters, with some entries being all-letters and others alphanumeric (e.g., 'East US', 'West Europe', 'Brazil South'). This name is used for reporting and understanding the geographical distribution of resource costs and corresponds to `regionid`."
+  },
+  "resourceid": {
+    "short_description": "This column provides the unique identifier for the specific Azure resource instance.",
+    "long_description": "`resourceid` is an `object` (string) representing the full Azure Resource Manager (ARM) ID of the resource. It has 3873 distinct values and lengths ranging from 7 to 220 characters, predominantly alphanumeric. This ID is crucial for uniquely identifying and locating each specific Azure resource (e.g., a VM, a storage account, a database) that incurred costs."
+  },
+  "resourcename": {
+    "short_description": "This column provides the human-readable name of the specific Azure resource instance.",
+    "long_description": "`resourcename` is an `object` (string) column containing the descriptive name of the Azure resource. It has 3956 distinct values and lengths ranging from 3 to 88 characters, with a mix of alphanumeric and all-letters patterns. This name (e.g., 'myWebApp01', 'prodDBserver') is often user-defined and aids in quickly identifying resources without needing to parse the full `resourceid`."
+  },
+  "resourcetype": {
+    "short_description": "This column describes the type of Azure resource (e.g., 'Microsoft.Compute/virtualMachines').",
+    "long_description": "`resourcetype` is an `object` (string) column specifying the category and type of the Azure resource according to ARM classification. It has 74 distinct values and lengths ranging from 4 to 70 characters, with a mix of all-letters and alphanumeric patterns. This is fundamental for grouping costs by service type and understanding the inventory of resources."
+  },
+  "servicecategory": {
+    "short_description": "This column provides a broad categorization of the Azure service.",
+    "long_description": "`servicecategory` is an `object` (string) column representing a high-level grouping of Azure services. It has 13 distinct values and lengths ranging from 3 to 25 characters, with many entries being all-letters. Examples might include 'Compute', 'Storage', 'Networking'. This is useful for high-level cost analysis, budgeting, and understanding expenditure by major service area."
+  },
+  "servicename": {
+    "short_description": "This column provides the specific name of the Azure service that incurred the charge.",
+    "long_description": "`servicename` is an `object` (string) column detailing the specific Azure service involved. It has 48 distinct values and lengths ranging from 5 to 30 characters, with a mix of alphanumeric and all-letters patterns. This is more granular than `servicecategory` (e.g., 'Virtual Machines', 'Blob Storage', 'Azure Functions'). It is crucial for understanding specific service costs and resource allocation."
+  },
+  "skuid": {
+    "short_description": "This column provides a numerical identifier for the Stock Keeping Unit (SKU) of the billed item.",
+    "long_description": "`skuid` is a `float64` representing a numerical identifier for the specific product SKU (Stock Keeping Unit). Values range from 0.0 to 616988881.0. With 380 distinct values, it indicates a variety of specific products or service configurations. This ID is used to uniquely identify the exact item being billed, often linked to pricing catalogs."
+  },
+  "skupriceid": {
+    "short_description": "This column provides a numerical identifier associated with the pricing of a specific SKU.",
+    "long_description": "`skupriceid` is an `int64` representing a numerical identifier for the pricing associated with a specific SKU. Values range from -2.0 to 616988881.0. The presence of negative values (-2.0) is unusual for an ID and might indicate a special status or error code in some systems. It has 380 distinct values, identical to `skuid`, suggesting a one-to-one mapping or similar grouping. This ID is crucial for linking to detailed pricing information and understanding price variations."
+  },
+  "subaccountid": {
+    "short_description": "This column provides the unique identifier for the Azure subscription or sub-account under which the resource is deployed.",
+    "long_description": "`subaccountid` is an `object` (string) representing a unique identifier for the Azure subscription or logical sub-account. It has 151 distinct values and lengths ranging from 7 to 51 characters, predominantly alphanumeric. This ID helps in organizing costs by specific subscriptions or departments within an organization, enabling granular cost management and chargeback."
+  },
+  "subaccountname": {
+    "short_description": "This column provides the human-readable name of the Azure subscription or sub-account.",
+    "long_description": "`subaccountname` is an `object` (string) column containing the descriptive name of the Azure subscription or sub-account. It has 151 distinct values (matching `subaccountid`) and lengths ranging from 7 to 43 characters, with a mix of alphanumeric and all-letters patterns. This name is user-friendly and helps identify the subscription context of the resource, often reflecting departmental or project names."
+  },
+  "subaccounttype": {
+    "short_description": "This column categorizes the type of Azure subscription or sub-account.",
+    "long_description": "`subaccounttype` is an `object` (string) column indicating the classification of the subscription. It has 2 distinct values and lengths ranging from 7 to 12 characters, consisting entirely of letters. Examples might include 'Enterprise' or 'PayAsYouGo'. This helps in understanding the billing model of the subscription and any associated benefits or restrictions."
+  },
+  "tags": {
+    "short_description": "This column stores user-defined metadata tags associated with the Azure resource.",
+    "long_description": "`tags` is an `object` (string) column containing key-value pair metadata that users apply to Azure resources. It has 583 distinct values and lengths ranging from 2 to 114 characters, with a mix of alphanumeric and all-letters patterns. Tags are highly flexible and are used for cost allocation, categorization, and management of resources (e.g., 'Environment:Production', 'Project:Alpha'), enabling custom reporting and governance."
+  }
+}

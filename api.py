@@ -16,6 +16,7 @@ import json
 
 from db_setup import DatabaseSetup
 from db_profiling import DatabaseProfiler
+from llm_profiling import LLMProfilingSummarizer
 
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -28,7 +29,7 @@ model = genai.GenerativeModel("gemini-2.0-flash-lite")
 UPLOAD_DIR='uploads'
 os.makedirs(UPLOAD_DIR,exist_ok=True)
 SUMMARY_FILE = 'all_summaries.json'
-PROFILE_FILE= 'all_profiles.json'
+PROFILE_FILE= 'all_profiles101.json'
 COMPLETE_PROFILE_FILE = 'complete_profiles.json' #this one has the llm profiling with everything else as well
 
 
@@ -235,14 +236,36 @@ def update_db(filenames:list[str]):
     #till here it saves everything to all_summaries.json
     #now i have to perform the basic profiling on these specific tables
     #so since filenames is the complete one with '.csv' , ill have to pass just the table names
-    # table_names=list(required_map.keys())
-    # print("Detected Table names:",table_names)
-    # profiler=DatabaseProfiler(table_map=table_names)
-    # basic_profile=profiler.profile_all_tables() #another thing just like summary
+    table_names=list(required_map.keys())
+    print("Detected Table names:",table_names)
+    profiler=DatabaseProfiler(table_map=table_names)
+    basic_profile=profiler.profile_all_tables() #another thing just like summary
+    all_basic_profiles=load_existing_summaries(PROFILE_FILE)
 
+    updated=0
+    added=0
+    skipped=0
+    # for table_name,table_info in basic_profile.keys()
+    for table_name, table_info in basic_profile.items():
+        new_rows = table_info.get('row_count', 0)
 
-
-
+        if table_name not in all_basic_profiles:
+            all_basic_profiles[table_name] = table_info
+            added += 1
+            print(f"Added new table: {table_name} ({new_rows} rows)")
+        else:
+            old_rows = all_basic_profiles[table_name].get('row_count', 0)
+            if new_rows > old_rows:
+                all_basic_profiles[table_name] = table_info
+                updated += 1
+                print(f"Updated table: {table_name} ({old_rows} → {new_rows} rows)")
+            else:
+                skipped += 1
+                print(f"Skipped {table_name} (old rows: {old_rows}, new rows: {new_rows})")
+    save_summaries(PROFILE_FILE, all_basic_profiles)
+    #this now saves the basic profiling summary to the PROFILE FILE
+    #now i have to make the llm profiles using the llm_profiling.py class LLMProfilingSummarizer
+    
 
 
 
