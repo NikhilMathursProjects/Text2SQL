@@ -10,13 +10,13 @@ In api_caller.py :
     (using tkinter for the file opener)
     place the file input thing, so that the file can be placed and then send that over the api,
     which then will store the csv data in 'uploads/'. --->DONE 
-    Then take the files just uploaded and perform db_setup(load_datasets)
-    Which will insert the csv data as tables after cleaning the data etc.
+    Then take the files just uploaded and perform db_setup(load_datasets)---->DONE
+    Which will insert the csv data as tables after cleaning the data etc.---->DONE
 In the pipeline:
-    ------DATA HAS BEEN STORED FROM api_caller.py------
-    Now to place the basic data summary of the tables: This will be stored in 'all_summaries.json' file
+    ------DATA HAS BEEN STORED FROM api_caller.py------ DONE
+    Now to place the basic data summary of the tables: This will be stored in 'all_summaries.json' file --->DONE
     This file contains basic data such as number of rows and columns,column names etc for all the tables in the database
-    ------SIMPLE SUMMARY DATA STORED------ 
+    ------SIMPLE SUMMARY DATA STORED------ DONE
     Now we have to profile the data, so we have db_profiling.py for that.
     This creates the basic statistical profile for each table in the db.
     store this in all_profiles.json

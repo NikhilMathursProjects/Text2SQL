@@ -24,13 +24,17 @@ app = FastAPI()
 class QueryRequest(BaseModel):
     user_query: str
 
-model = genai.GenerativeModel("gemini-2.0-flash-lite")
+# gemini-2.0-flash-lite #fast
+# gemini-2.5-flash #slower
+# model = genai.GenerativeModel("gemini-2.0-flash-lite")
+model = genai.GenerativeModel("gemini-2.5-flash")
 
 UPLOAD_DIR='uploads'
 os.makedirs(UPLOAD_DIR,exist_ok=True)
 SUMMARY_FILE = 'all_summaries.json'
 PROFILE_FILE= 'all_profiles101.json'
-COMPLETE_PROFILE_FILE = 'complete_profiles.json' #this one has the llm profiling with everything else as well
+LLM_PROFILE_DIR='separate_llm_profiles/' #contains all separate llm profile jsons
+COMPLETE_SUMMARY_FILE = 'complete_profiles.json' #this one has the llm profiling with everything else as well
 
 
 #------ for the main api--------
@@ -45,8 +49,9 @@ def get_profile_descriptions():
         - profile map
     """
     #opens the file that has the profiles saved
-    with open('all_profiles.json','r') as f:
+    with open('complete_profiles.json','r') as f:
         all_profiles = json.load(f)
+    print(all_profiles)
     
     #only uses the short descriptions for the data
     profile_map = {}
@@ -56,8 +61,8 @@ def get_profile_descriptions():
             'columns': {col: {
                 'data_type': data['data_type'],
                 'sample_values': data['sample_values'][:2],
-                # 'short_description': data['short_description']
-                'long_description':data['long_description'],
+                'short_description': data['short_description']
+                # 'long_description':data['long_description'],
             } for col, data in all_profiles[table]['columns'].items()}
         }
     return profile_map
@@ -108,7 +113,7 @@ def generate_natural_language_answer(user_query: str, sql_results: list, sql_que
     
     prompt = f"""Query: {user_query}
 SQL: {sql_query}
-Results: {len(sql_results)} records
+Results: {sql_results}
 
 Answer:"""
 
@@ -260,14 +265,40 @@ def update_db(filenames:list[str]):
                 updated += 1
                 print(f"Updated table: {table_name} ({old_rows} → {new_rows} rows)")
             else:
+                basic_profile[table_name]=all_basic_profiles[table_name] #updating basic_profile dict
                 skipped += 1
                 print(f"Skipped {table_name} (old rows: {old_rows}, new rows: {new_rows})")
     save_summaries(PROFILE_FILE, all_basic_profiles)
     #this now saves the basic profiling summary to the PROFILE FILE
     #now i have to make the llm profiles using the llm_profiling.py class LLMProfilingSummarizer
-    
+    #i can also continue to use the `basic_profile` dict since i keep it updated
+    llm_profiler=LLMProfilingSummarizer(llm_client=model)
+    for table_name in table_names:
+        prompt=llm_profiler.create_profile_prompt(table_name=table_name,profile_data=basic_profile[table_name])
+        response = model.generate_content(prompt)
+        result_text = response.text
+        #path for the file to place the llm profile data into
+        llm_profile_save_file=LLM_PROFILE_DIR+table_name+'.json'
+        json_data=result_text.strip().replace('```json','').replace('```', '').strip()
+        parsed_json = json.loads(json_data)
 
-
+        with open(llm_profile_save_file, 'w') as f:
+            json.dump(parsed_json, f, indent=2)
+    #so now this saves the llm summaries to specific table name.json files in separate_llm_profiles
+    #now i gotta compile it all together in complete_profiles.json
+    #so i have the basic_profile dict
+    #and the multiple files with table names llm _decriptions dicts when loaded
+    # complete_summary_file=COMPLETE_SUMMARY_FILE #complete_profiles.json
+    #just open each llm profile file and add it into the basic profile dict and at the end just write to the complete dict
+    complete_summary=basic_profile.copy()
+    for table_name in table_names:
+        llm_profile_save_file=LLM_PROFILE_DIR+table_name+'.json'
+        llm_profile=load_existing_summaries(llm_profile_save_file)
+        # llm_profile[table_name]={short,long}
+        for col_name,col_data in complete_summary[table_name]['columns'].items():
+            # basic_profile[table_name]['columns'][col_name]=col_data
+            col_data.update(llm_profile[col_name])
+    save_summaries(COMPLETE_SUMMARY_FILE,complete_summary)
 
 
 @app.post("/upload_csv")

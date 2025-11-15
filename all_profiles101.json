@@ -1997,5 +1997,229 @@
                 }
             }
         }
+    },
+    "Services": {
+        "table_name": "Services",
+        "row_count": 397,
+        "columns": {
+            "consumedservice": {
+                "null_count": 0,
+                "distinct_count": 200,
+                "data_type": "object",
+                "sample_values": [
+                    "Unknown",
+                    "Unknown",
+                    "api center",
+                    "api management",
+                    "api management",
+                    "appservices",
+                    "australiacentral",
+                    "australiaeast",
+                    "australiasoutheast",
+                    "azure app service"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 39,
+                "common_patterns": {
+                    "all_letters": 63,
+                    "alphanumeric": 3
+                }
+            },
+            "resourcetype": {
+                "null_count": 0,
+                "distinct_count": 330,
+                "data_type": "object",
+                "sample_values": [
+                    "microsoft.hybridnetwork/devices",
+                    "microsoft.network/internetanalyzerprofiles",
+                    "microsoft.apicenter/service",
+                    "microsoft.apimanagement/gateways",
+                    "microsoft.apimanagement/service",
+                    "microsoft.security/pricings",
+                    "microsoft.sql/locations",
+                    "microsoft.sql/locations",
+                    "microsoft.sql/locations",
+                    "microsoft.web/sites"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 11,
+                "max_length": 110,
+                "common_patterns": {
+                    "alphanumeric": 7
+                }
+            },
+            "servicename": {
+                "null_count": 0,
+                "distinct_count": 160,
+                "data_type": "object",
+                "sample_values": [
+                    "Azure Network Function Manager",
+                    "Azure Internet Analyzer",
+                    "API Center",
+                    "API Management",
+                    "API Management",
+                    "Azure App Service",
+                    "Azure SQL Database",
+                    "Azure SQL Database",
+                    "Azure SQL Database",
+                    "Azure App Service"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 39,
+                "common_patterns": {
+                    "all_letters": 7,
+                    "alphanumeric": 4
+                }
+            },
+            "servicecategory": {
+                "null_count": 0,
+                "distinct_count": 18,
+                "data_type": "object",
+                "sample_values": [
+                    "Networking",
+                    "Networking",
+                    "Integration",
+                    "Integration",
+                    "Integration",
+                    "Web",
+                    "Databases",
+                    "Databases",
+                    "Databases",
+                    "Web"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 3,
+                "max_length": 25,
+                "common_patterns": {
+                    "all_letters": 332
+                }
+            },
+            "servicesubcategory": {
+                "null_count": 0,
+                "distinct_count": 58,
+                "data_type": "object",
+                "sample_values": [
+                    "Network Infrastructure",
+                    "Network Connectivity",
+                    "API Management",
+                    "API Management",
+                    "API Management",
+                    "Application Platforms",
+                    "Relational Databases",
+                    "Relational Databases",
+                    "Relational Databases",
+                    "Application Platforms"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 37,
+                "common_patterns": {
+                    "all_letters": 76
+                }
+            },
+            "publishername": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft",
+                    "Microsoft"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 9,
+                "common_patterns": {
+                    "all_letters": 397
+                }
+            },
+            "publishertype": {
+                "null_count": 0,
+                "distinct_count": 2,
+                "data_type": "object",
+                "sample_values": [
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider",
+                    "Cloud Provider"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 11,
+                "max_length": 14,
+                "common_patterns": {
+                    "all_letters": 5
+                }
+            },
+            "environment": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud",
+                    "Cloud"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 5,
+                "max_length": 11,
+                "common_patterns": {
+                    "all_letters": 396
+                }
+            },
+            "servicemodel": {
+                "null_count": 0,
+                "distinct_count": 3,
+                "data_type": "object",
+                "sample_values": [
+                    "IaaS",
+                    "SaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS",
+                    "PaaS"
+                ],
+                "min_value": null,
+                "max_value": null,
+                "min_length": 4,
+                "max_length": 4,
+                "common_patterns": {
+                    "all_letters": 397
+                }
+            }
+        }
     }
 }

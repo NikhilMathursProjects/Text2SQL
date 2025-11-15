@@ -1,0 +1,38 @@
+{
+  "consumedservice": {
+    "short_description": "This column identifies a specific service that has been consumed or utilized within the environment.",
+    "long_description": "The 'consumedservice' column details the particular service that was used. Values are strings ranging from 3 to 39 characters in length. With 200 distinct values, it likely represents specific instances or detailed types of services rather than broad categories. While most entries are composed solely of letters, a small number contain alphanumeric characters, indicating varying naming conventions for specific consumed services."
+  },
+  "resourcetype": {
+    "short_description": "This column describes the specific type of resource associated with the consumed service, providing fine-grained detail.",
+    "long_description": "The 'resourcetype' column specifies the exact kind of resource involved in the service consumption. It contains string values with a wide length range, from 11 up to 110 characters. The very high distinct count of 330 suggests highly specific and descriptive resource identifiers, potentially including complex names, paths, or full resource URIs. The low count for 'alphanumeric' pattern indicates that many entries likely contain spaces, special characters, or mixed cases."
+  },
+  "servicename": {
+    "short_description": "This column represents the general name or primary identifier of the service being offered.",
+    "long_description": "The 'servicename' column provides the high-level name of the service, distinct from its specific consumption instance. It consists of string values, with lengths varying from 5 to 39 characters. With 160 distinct values, it offers a moderately granular classification, potentially differentiating between service editions, versions, or functional groups. The patterns indicate a mix of letter-only and alphanumeric names, similar to consumedservice."
+  },
+  "servicecategory": {
+    "short_description": "This column classifies services into broad functional areas or groups, providing high-level categorization.",
+    "long_description": "The 'servicecategory' column assigns services to a wide, overarching category. Values are strings ranging from 3 to 25 characters in length. With only 18 distinct values and the vast majority of entries (332 out of 397) consisting solely of letters, it serves as a broad, human-readable classification (e.g., 'Compute', 'Storage', 'Networking'). This column is ideal for high-level reporting and filtering."
+  },
+  "servicesubcategory": {
+    "short_description": "This column provides a more granular classification of services, nested within the broader service categories.",
+    "long_description": "The 'servicesubcategory' column offers a more detailed level of service classification than 'servicecategory'. Values are strings, 4 to 37 characters long. With 58 distinct values and a significant portion of entries (76 out of 397) being letter-only, it helps organize services into logical groupings under their main categories. This column is useful for more refined analysis or structuring a service catalog."
+  },
+  "publishername": {
+    "short_description": "This column identifies the specific organization or entity that provides the service.",
+    "long_description": "The 'publishername' column indicates the vendor or entity responsible for offering the service. It contains string values, consistently ranging from 5 to 9 characters in length. With only 3 distinct values and all entries composed solely of letters, it represents a very small, fixed set of service providers (e.g., 'Azure', 'AWS', 'Google', or an internal department). This column is critical for vendor-specific reporting and cost attribution."
+  },
+  "publishertype": {
+    "short_description": "This column specifies the general type or nature of the service publisher.",
+    "long_description": "The 'publishertype' column describes the classification of the service publisher. Values are strings, 11 to 14 characters long. With only 2 distinct values, it provides a very high-level classification, likely distinguishing between categories like 'CloudProvider' and 'OnPremise' or 'InternalPartner'. The low 'all_letters' count suggests some distinct values may contain spaces or non-letter characters."
+  },
+  "environment": {
+    "short_description": "This column indicates the deployment or operational environment where the service is utilized.",
+    "long_description": "The 'environment' column specifies the operational context for the service. It contains string values, 5 to 11 characters in length. With only 3 distinct values and almost all entries (396 out of 397) composed solely of letters, it represents a limited set of standardized environments such as 'Production', 'Development', 'Staging', or 'Test'. This column is crucial for segmenting resource usage and costs across different lifecycle stages."
+  },
+  "servicemodel": {
+    "short_description": "This column defines the service delivery model (e.g., Infrastructure as a Service, Platform as a Service).",
+    "long_description": "The 'servicemodel' column identifies the service delivery model being used. Values are strings, consistently 4 characters in length. With only 3 distinct values and all entries (397 out of 397) composed solely of letters, it almost certainly represents standard service models like 'IaaS', 'PaaS', and 'SaaS'. This column is fundamental for architectural classification and understanding the level of abstraction provided by the service."
+  }
+}

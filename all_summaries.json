@@ -97,5 +97,20 @@
             "tags"
         ],
         "source_file": "azure_cost_usage.csv"
+    },
+    "Services": {
+        "rows": 397,
+        "columns": [
+            "consumedservice",
+            "resourcetype",
+            "servicename",
+            "servicecategory",
+            "servicesubcategory",
+            "publishername",
+            "publishertype",
+            "environment",
+            "servicemodel"
+        ],
+        "source_file": "Services.csv"
     }
 }

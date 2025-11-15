@@ -31,7 +31,6 @@ Format your response as a JSON object where keys are column names and values hav
 Here is the profiling data:
 
 """
-        
         for col_name, col_data in profile_data['columns'].items():
             prompt += f"\n--- Column: {col_name} ---\n"
             prompt += f"Data Type: {col_data['data_type']}\n"
@@ -144,7 +143,6 @@ class EnhancedDatabaseProfiler(DatabaseProfiler):
                 profile['llm_summaries_generated'] = False
         else:
             profile['llm_summaries_generated'] = False
-        
         return profile
     
 # def main():
